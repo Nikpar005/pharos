@@ -1,0 +1,172 @@
+# Smaller guides that load only when opened: phone setup, evacuation, phrases.
+# Menu names on phones differ between makers and versions; we say so on screen.
+
+setup:
+  status: draft
+  sources:
+    - name: Android Help (Google)
+      url: https://support.google.com/android
+    - name: iPhone User Guide (Apple)
+      url: https://support.apple.com/guide/iphone/welcome/ios
+  platforms:
+    - id: android
+      locales:
+        el:
+          title: Android
+          steps:
+            - "Emergency SOS: Ρυθμίσεις → Ασφάλεια και έκτακτη ανάγκη → Emergency SOS. Με 5 γρήγορα πατήματα στο κουμπί λειτουργίας καλεί το 112."
+            - "Ειδοποιήσεις 112: Ρυθμίσεις → Ασφάλεια και έκτακτη ανάγκη → Ειδοποιήσεις έκτακτης ανάγκης ασύρματα. Άφησέ τες όλες ανοιχτές."
+            - "Ειδοποιήσεις σεισμού: Ρυθμίσεις → Ασφάλεια και έκτακτη ανάγκη → Ειδοποιήσεις σεισμών (όπου υπάρχει)."
+            - "Ιατρικές πληροφορίες: Ρυθμίσεις → Ασφάλεια και έκτακτη ανάγκη → Ιατρικές πληροφορίες και επαφές έκτακτης ανάγκης. Φαίνονται χωρίς ξεκλείδωμα."
+            - "Γρήγορο άνοιγμα Pharos (Samsung): Ρυθμίσεις → Προηγμένες λειτουργίες → Πλευρικό πλήκτρο → Διπλό πάτημα → Άνοιγμα εφαρμογής → Pharos."
+            - "Γρήγορο άνοιγμα Pharos (Pixel): Ρυθμίσεις → Σύστημα → Κινήσεις → Quick Tap → Άνοιγμα εφαρμογής → Pharos."
+            - "Στην εφαρμογή Android του Pharos: σύρε προς τα κάτω τις Γρήγορες ρυθμίσεις, πάτα το μολυβάκι και πρόσθεσε το πλακίδιο «Pharos»."
+        en:
+          title: Android
+          steps:
+            - "Emergency SOS: Settings → Safety & emergency → Emergency SOS. Pressing the power button 5 times quickly calls 112."
+            - "112 alerts: Settings → Safety & emergency → Wireless emergency alerts. Keep them all on."
+            - "Earthquake alerts: Settings → Safety & emergency → Earthquake alerts (where available)."
+            - "Medical info: Settings → Safety & emergency → Medical information and emergency contacts. Visible without unlocking."
+            - "Open Pharos fast (Samsung): Settings → Advanced features → Side button → Double press → Open app → Pharos."
+            - "Open Pharos fast (Pixel): Settings → System → Gestures → Quick Tap → Open app → Pharos."
+            - "In the Pharos Android app: pull down Quick Settings, tap the pencil and add the “Pharos” tile."
+    - id: iphone
+      locales:
+        el:
+          title: iPhone
+          steps:
+            - "SOS έκτακτης ανάγκης: Ρυθμίσεις → SOS έκτακτης ανάγκης. Κράτα πατημένο το πλαϊνό κουμπί μαζί με ένα κουμπί έντασης, ή πάτα 5 φορές το πλαϊνό."
+            - "Ειδοποιήσεις 112: Ρυθμίσεις → Γνωστοποιήσεις → κάτω κάτω «Ειδοποιήσεις έκτακτης ανάγκης». Άφησέ τες ανοιχτές."
+            - "Ιατρική ταυτότητα: εφαρμογή Υγεία → η φωτογραφία σου → Ιατρική ταυτότητα → «Προβολή όταν είναι κλειδωμένο»."
+            - "Γρήγορο άνοιγμα Pharos: Ρυθμίσεις → Προσβασιμότητα → Αφή → Πίσω πάτημα → Τριπλό πάτημα → διάλεξε μια Συντόμευση που ανοίγει το Pharos."
+            - "Σε iPhone με κουμπί Ενέργειας (Action button): Ρυθμίσεις → Κουμπί Ενέργειας → Συντόμευση → άνοιγμα Pharos."
+        en:
+          title: iPhone
+          steps:
+            - "Emergency SOS: Settings → Emergency SOS. Hold the side button with a volume button, or press the side button 5 times."
+            - "112 alerts: Settings → Notifications → at the bottom, “Emergency alerts”. Keep them on."
+            - "Medical ID: Health app → your picture → Medical ID → “Show when locked”."
+            - "Open Pharos fast: Settings → Accessibility → Touch → Back Tap → Triple Tap → choose a Shortcut that opens Pharos."
+            - "On iPhones with an Action button: Settings → Action Button → Shortcut → open Pharos."
+
+evacuation:
+  status: draft
+  sources:
+    - name: Γενική Γραμματεία Πολιτικής Προστασίας, Δασικές πυρκαγιές
+      url: https://civilprotection.gov.gr/odigies-prostasias/dasikes-pyrkagies
+  groups:
+    - id: now
+      minutes: 5
+      locales:
+        el:
+          title: Σε 5 λεπτά
+          items:
+            - Άνθρωποι και κατοικίδια πρώτα
+            - Κιτ έκτακτης ανάγκης
+            - Φάρμακα που παίρνετε
+            - Κινητό, φορτιστής, powerbank
+            - Ταυτότητες, κλειδιά, μετρητά
+            - Νερό
+            - Μακριά βαμβακερά ρούχα και κλειστά παπούτσια
+        en:
+          title: In 5 minutes
+          items:
+            - People and pets first
+            - Emergency kit
+            - Medicines you take
+            - Phone, charger, power bank
+            - ID, keys, cash
+            - Water
+            - Long cotton clothes and closed shoes
+    - id: if-time
+      minutes: 15
+      locales:
+        el:
+          title: Αν υπάρχει χρόνος
+          items:
+            - Κλείσε αέριο και γενικό διακόπτη ρεύματος
+            - Κλείσε πόρτες και παράθυρα
+            - Στείλε «Είμαι καλά» στην επαφή εκτός πόλης
+            - Πάρε φωτογραφίες ή αντίγραφα σημαντικών εγγράφων
+            - Ακολούθησε τον δρόμο που λένε οι αρχές, όχι συντομεύσεις
+        en:
+          title: If there is time
+          items:
+            - Turn off the gas and the mains electricity
+            - Close doors and windows
+            - Send “I'm okay” to your out-of-area contact
+            - Take photos or copies of important documents
+            - Use the route the authorities give, no shortcuts
+
+phrases:
+  # Shown in big Greek text to someone nearby, with the user's language below.
+  # Add a language: add its code to every phrase.
+  languages: [en, de, fr, it]
+  items:
+    - id: help
+      el: Χρειάζομαι βοήθεια.
+      en: I need help.
+      de: Ich brauche Hilfe.
+      fr: J'ai besoin d'aide.
+      it: Ho bisogno di aiuto.
+    - id: ambulance
+      el: Καλέστε ασθενοφόρο, 166 ή 112.
+      en: Call an ambulance, 166 or 112.
+      de: Rufen Sie einen Krankenwagen, 166 oder 112.
+      fr: Appelez une ambulance, 166 ou 112.
+      it: Chiamate un'ambulanza, 166 o 112.
+    - id: doctor
+      el: Χρειάζομαι γιατρό.
+      en: I need a doctor.
+      de: Ich brauche einen Arzt.
+      fr: J'ai besoin d'un médecin.
+      it: Ho bisogno di un medico.
+    - id: injured
+      el: Κάποιος είναι τραυματισμένος.
+      en: Someone is injured.
+      de: Jemand ist verletzt.
+      fr: Quelqu'un est blessé.
+      it: Qualcuno è ferito.
+    - id: fire
+      el: Υπάρχει φωτιά!
+      en: There is a fire!
+      de: Es brennt!
+      fr: Il y a un incendie !
+      it: C'è un incendio!
+    - id: hospital
+      el: Πού είναι το πλησιέστερο νοσοκομείο;
+      en: Where is the nearest hospital?
+      de: Wo ist das nächste Krankenhaus?
+      fr: Où est l'hôpital le plus proche ?
+      it: Dov'è l'ospedale più vicino?
+    - id: pharmacy
+      el: Πού είναι το εφημερεύον φαρμακείο;
+      en: Where is the pharmacy on duty?
+      de: Wo ist die Notdienst-Apotheke?
+      fr: Où est la pharmacie de garde ?
+      it: Dov'è la farmacia di turno?
+    - id: shelter
+      el: Πού είναι ο χώρος καταφυγής;
+      en: Where is the emergency assembly area?
+      de: Wo ist der Sammelplatz für Notfälle?
+      fr: Où est le point de rassemblement d'urgence ?
+      it: Dov'è l'area di raccolta per le emergenze?
+    - id: allergy
+      el: Έχω σοβαρή αλλεργία.
+      en: I have a severe allergy.
+      de: Ich habe eine schwere Allergie.
+      fr: J'ai une allergie grave.
+      it: Ho una grave allergia.
+    - id: diabetes
+      el: Έχω διαβήτη.
+      en: I have diabetes.
+      de: Ich habe Diabetes.
+      fr: Je suis diabétique.
+      it: Ho il diabete.
+    - id: no-greek
+      el: Δεν μιλάω ελληνικά.
+      en: I don't speak Greek.
+      de: Ich spreche kein Griechisch.
+      fr: Je ne parle pas grec.
+      it: Non parlo greco.

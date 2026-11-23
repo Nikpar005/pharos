@@ -45,11 +45,19 @@ export const EmergencyNumber = z.object({
   locales: localized({ label: nonEmpty })
 });
 
+export const OnlineLink = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  region: z.string().regex(/^[a-z0-9-]+$/).optional(),
+  url: z.url({ protocol: /^https$/ }),
+  locales: localized({ label: nonEmpty })
+});
+
 export const Country = z
   .object({
     code: z.string().regex(/^[a-z]{2}$/),
     emergency: z.string().regex(/^[0-9]{2,4}$/),
     numbers: z.array(EmergencyNumber),
+    links: z.array(OnlineLink).default([]),
     sources: z.array(Source).min(1),
     locales: localized({ name: nonEmpty, authority: nonEmpty })
   })
@@ -79,6 +87,33 @@ export const FirstAid = z
       .min(1)
   })
   .and(Review);
+
+// Phone setup, evacuation checklist and phrase card (content/extras.yaml), loaded lazily.
+const listOf = (shape) => localized(shape);
+export const Extras = z.object({
+  setup: z
+    .object({
+      sources: z.array(Source).min(1),
+      platforms: z.array(z.object({ id: z.string(), locales: listOf({ title: nonEmpty, steps: z.array(nonEmpty).min(1).max(10) }) }))
+    })
+    .and(Review),
+  evacuation: z
+    .object({
+      sources: z.array(Source).min(1),
+      groups: z.array(
+        z.object({ id: z.string(), minutes: z.number().int().positive(), locales: listOf({ title: nonEmpty, items: z.array(nonEmpty).min(1) }) })
+      )
+    })
+    .and(Review),
+  phrases: z
+    .object({
+      languages: z.array(z.string().regex(/^[a-z]{2}$/)).min(1),
+      items: z.array(z.record(z.string(), z.string().min(1))).min(1)
+    })
+    .refine((p) => p.items.every((it) => 'el' in it && 'id' in it && p.languages.every((l) => l in it)), {
+      message: 'every phrase needs id, el and every listed language'
+    })
+});
 
 // Downloadable offline map regions. bbox = [west, south, east, north].
 export const Region = z.object({

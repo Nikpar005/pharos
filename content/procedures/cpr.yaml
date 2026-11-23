@@ -1,30 +1,32 @@
 id: cpr
 status: draft
 sources:
-  - name: European Resuscitation Council, Guidelines 2021 (Basic Life Support)
+  - name: European Resuscitation Council, Guidelines 2025 (Adult Basic Life Support)
     url: https://www.cprguidelines.eu
   - name: ΕΚΑΒ, «Μαθαίνω Πρώτες Βοήθειες – Είμαι ασφαλής» (Υπουργείο Υγείας)
     url: https://moh.gov.gr/articles/health/dieythynsh-prwtobathmias-frontidas-ygeias/draseis-kai-programmata-agwghs-ygeias/agwgh-ygeias/entypo-kai-optikoakoystiko-yliko/12791-bibliario-prwtwn-bohtheiwn?fdl=27980
 locales:
   el:
     title: ΚΑΡΠΑ
-    intro: Για ενήλικα που δεν αντιδρά και δεν αναπνέει κανονικά.
+    intro: Για ενήλικα που δεν αντιδρά. Αν έχεις αμφιβολία, ξεκίνα.
     steps:
       - Βεβαιώσου ότι ο χώρος είναι ασφαλής. Ταρακούνησε απαλά τους ώμους και μίλα δυνατά.
-      - Άνοιξε τον αεραγωγό (κεφάλι πίσω, πηγούνι πάνω) και κοίτα, άκου, νιώσε για 10 δευτερόλεπτα. Αν δεν αναπνέει κανονικά, κάλεσε 166 ή 112 με ανοιχτή ακρόαση.
-      - Ζήτα από κάποιον να φέρει απινιδωτή. Όταν έρθει, άνοιξέ τον και κάνε ό,τι λέει.
-      - Βάλε τα χέρια στο κέντρο του στήθους και πίεζε δυνατά, 5–6 εκατοστά βάθος.
-      - Ακολούθησε τον ήχο. 100–120 πιέσεις το λεπτό, χωρίς διακοπή.
+      - Αν δεν αντιδρά, κάλεσε αμέσως 166 ή 112 με ανοιχτή ακρόαση. Όσο περιμένεις, έλεγξε την αναπνοή για έως 10 δευτερόλεπτα (κεφάλι πίσω, πηγούνι πάνω).
+      - Αν δεν αναπνέει κανονικά ή δεν είσαι σίγουρος, ξεκίνα αμέσως ΚΑΡΠΑ. Αραιές ανάσες ή λαχάνιασμα δεν είναι κανονική αναπνοή.
+      - Ζήτα από κάποιον να φέρει απινιδωτή. Βάλ' τον μόλις έρθει, κάνε ό,τι λέει και ξανάρχισε τις πιέσεις αμέσως μετά.
+      - Χέρια στο κέντρο του στήθους. Πίεσε δυνατά, 5–6 εκατοστά βάθος.
+      - Ακολούθησε τον ήχο, 100–120 πιέσεις το λεπτό, χωρίς διακοπή.
       - Αν έχεις εκπαιδευτεί, κάνε 2 εμφυσήσεις κάθε 30 πιέσεις. Αλλιώς, μόνο πιέσεις.
-      - Συνέχισε μέχρι να έρθει βοήθεια, να σου πει ο απινιδωτής να σταματήσεις ή να αναπνεύσει κανονικά.
+      - Αν υπάρχει κι άλλος, αλλάζετε κάθε 2 λεπτά. Συνέχισε μέχρι να έρθει βοήθεια ή να αναπνεύσει κανονικά.
   en:
     title: CPR
-    intro: For an adult who is unresponsive and not breathing normally.
+    intro: For an adult who is unresponsive. If in doubt, start.
     steps:
       - Make sure the area is safe. Gently shake their shoulders and speak loudly.
-      - Open the airway (head back, chin up) and look, listen and feel for 10 seconds. If they aren't breathing normally, call 112 on speaker.
-      - Ask someone to bring a defibrillator (AED). When it arrives, switch it on and do what it says.
-      - Put your hands in the centre of the chest and push hard, 5–6 cm deep.
-      - Follow the sound. 100–120 compressions a minute, without stopping.
+      - If they don't respond, call 112 at once on speaker. While you wait, check breathing for up to 10 seconds (head back, chin up).
+      - If they aren't breathing normally, or you're not sure, start CPR now. Occasional gasps or panting are not normal breathing.
+      - Ask someone to bring a defibrillator (AED). Attach it as soon as it arrives, follow its prompts and restart compressions straight after.
+      - Hands in the centre of the chest. Push hard, 5–6 cm deep.
+      - Follow the sound, 100–120 compressions a minute, without stopping.
       - If you are trained, give 2 rescue breaths after every 30 compressions. Otherwise, compressions only.
-      - Keep going until help arrives, the AED tells you to stop, or they breathe normally.
+      - If someone else can help, swap every 2 minutes. Keep going until help arrives or they breathe normally.

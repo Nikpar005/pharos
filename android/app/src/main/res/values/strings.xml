@@ -4,4 +4,6 @@
     <string name="title_activity_main">Pharos</string>
     <string name="package_name">me.nikpar.pharos</string>
     <string name="custom_url_scheme">me.nikpar.pharos</string>
+    <string name="shortcut_call_short">112</string>
+    <string name="shortcut_call_long">Κλήση 112</string>
 </resources>

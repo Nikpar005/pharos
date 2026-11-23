@@ -1,13 +1,13 @@
 # First aid, written in our own words from the ΕΚΑΒ handbook
 # «Μαθαίνω Πρώτες Βοήθειες – Είμαι ασφαλής» (Υπουργείο Υγείας / ΕΚΑΒ).
-# Where the handbook and the newer ERC 2021 guidelines differ, we follow the
+# Where the handbook and the newer ERC 2025 guidelines differ, we follow the
 # safer of the two and say so in a comment next to the step.
 # urgent: true → the topic page starts with a "Call 166 / 112" button.
 status: draft
 sources:
   - name: ΕΚΑΒ, «Μαθαίνω Πρώτες Βοήθειες – Είμαι ασφαλής» (Υπουργείο Υγείας)
     url: https://moh.gov.gr/articles/health/dieythynsh-prwtobathmias-frontidas-ygeias/draseis-kai-programmata-agwghs-ygeias/agwgh-ygeias/entypo-kai-optikoakoystiko-yliko/12791-bibliario-prwtwn-bohtheiwn?fdl=27980
-  - name: European Resuscitation Council, First Aid Guidelines 2021
+  - name: European Resuscitation Council, Guidelines 2025 (First Aid, Basic Life Support)
     url: https://www.cprguidelines.eu
 topics:
   - id: recovery
@@ -49,7 +49,8 @@ topics:
           - Σε έγκυο, οι ώσεις γίνονται στο κέντρο του στήθους, όχι στην κοιλιά.
           - Εναλλάσσε 5 χτυπήματα και 5 ώσεις. Κάλεσε 166 ή 112.
           - Αν χάσει τις αισθήσεις του, ξεκίνα ΚΑΡΠΑ.
-          - Βρέφος (κάτω του 1 έτους) — 5 χτυπήματα στην πλάτη πάνω στον πήχη σου και 5 πιέσεις στο στήθος με 2 δάχτυλα. Όχι κοιλιακές ώσεις.
+          - Βρέφος (κάτω του 1 έτους) — 5 χτυπήματα στην πλάτη πάνω στον πήχη σου, μετά 5 πιέσεις στο στήθος με τους δύο αντίχειρες, αγκαλιάζοντας το στήθος. Όχι κοιλιακές ώσεις.
+          - Όποιος σώθηκε με κοιλιακές ώσεις ή πιέσεις στο στήθος πρέπει να τον δει γιατρός.
       en:
         title: Choking
         signs: Clutching the throat. Coughing hard, or unable to speak, cough or breathe.
@@ -60,7 +61,8 @@ topics:
           - For a pregnant woman, push on the centre of the chest, not the belly.
           - Alternate 5 blows and 5 thrusts. Call 112.
           - If they become unresponsive, start CPR.
-          - Baby (under 1) — 5 back blows along your forearm, then 5 chest pushes with 2 fingers. No abdominal thrusts.
+          - Baby (under 1) — 5 back blows along your forearm, then 5 chest thrusts with both thumbs, hands encircling the chest. No abdominal thrusts.
+          - Anyone treated with abdominal thrusts or chest thrusts should be checked by a doctor.
 
   - id: bleeding
     urgent: true

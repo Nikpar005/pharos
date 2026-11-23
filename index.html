@@ -10,7 +10,13 @@
     <title>Pharos</title>
   </head>
   <body>
-    <div id="app"></div>
+    <!-- Shown until the app starts (and if it ever fails to): 112 always works. -->
+    <div id="app">
+      <div style="min-height:100vh;display:flex;flex-direction:column;gap:16px;justify-content:center;padding:24px;background:#0E1B2B;color:#F1F4F7;font-family:system-ui,sans-serif">
+        <a href="tel:112" style="display:block;padding:22px;border-radius:22px;background:#C4271D;color:#fff;text-decoration:none;font-size:28px;font-weight:800;text-align:center">112</a>
+        <p style="margin:0;text-align:center;color:#C9D3DE">Pharos</p>
+      </div>
+    </div>
     <noscript>Το Pharos χρειάζεται JavaScript. Σε έκτακτη ανάγκη κάλεσε το 112.</noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>

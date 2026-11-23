@@ -3,7 +3,9 @@ import { useStore } from '../store';
 import { Icon } from '../components/Icon';
 import { Screen, BackLink, CallButton, DraftBanner, SectionTitle } from '../components/ui';
 import { getProcedure, pick, type Procedure } from '../content';
-import { keepScreenOn, startMetronome, startWhistle, getTorch, SOS_PATTERN, type Torch } from '../lib/device';
+import { keepScreenOn, startMetronome, startWhistle, getTorch, beep, SOS_PATTERN, type Torch } from '../lib/device';
+import { speak, stopSpeaking } from '../lib/voice';
+import { logEvent, clock, duration } from '../lib/eventlog';
 import { href } from '../router';
 
 function Steps(props: { p: Procedure }) {
@@ -74,30 +76,92 @@ export function Trapped() {
   );
 }
 
-// ---- CPR with metronome ----------------------------------------------------------
+// ---- CPR: metronome, timer, 2-minute swaps, voice, event log ----------------
+
+const BPM = 110;
+const SWAP_MS = 2 * 60 * 1000;
 
 export function Cpr() {
-  const { t, lang } = useStore();
+  const { t, lang, settings, setSettings } = useStore();
   const p = getProcedure('cpr');
   const text = pick(p.locales, lang);
   const [on, setOn] = useState(false);
+  const [withBreaths, setWithBreaths] = useState(false);
   const [count, setCount] = useState(0);
   const [pulse, setPulse] = useState(false);
+  const [pausedForBreaths, setPausedForBreaths] = useState(false);
+  const [startedAt, setStartedAt] = useState<number | null>(null);
+  const [now, setNow] = useState(Date.now());
+  const [shocks, setShocks] = useState(0);
+  const lastSwap = useRef(0);
+  const say = (msg: string) => settings.voice && speak(msg, lang);
 
+  // Metronome (restarted after every 2-breath pause in 30:2 mode).
+  useEffect(() => {
+    if (!on || pausedForBreaths) return;
+    let n = 0;
+    const stop = startMetronome(BPM, () => {
+      n++;
+      setCount(n);
+      setPulse((x) => !x);
+      if (withBreaths && n === 30) {
+        setPausedForBreaths(true);
+        say(t('cpr.sayBreaths'));
+      }
+    });
+    return stop;
+  }, [on, pausedForBreaths, withBreaths]);
+
+  // 2 rescue breaths take about 5 seconds, then compressions resume.
+  useEffect(() => {
+    if (!pausedForBreaths) return;
+    const id = window.setTimeout(() => {
+      setCount(0);
+      setPausedForBreaths(false);
+      say(t('cpr.sayPush'));
+    }, 5000);
+    return () => clearTimeout(id);
+  }, [pausedForBreaths]);
+
+  // Clock, swap prompt every 2 minutes, screen kept on.
   useEffect(() => {
     if (!on) return;
-    setCount(0);
-    const stop = startMetronome(110, () => {
-      setCount((c) => (c % 30) + 1);
-      setPulse((x) => !x);
-    });
     let release = () => {};
     keepScreenOn().then((r) => (release = r));
+    const id = window.setInterval(() => {
+      const tNow = Date.now();
+      setNow(tNow);
+      if (startedAt && tNow - lastSwap.current >= SWAP_MS) {
+        lastSwap.current = tNow;
+        beep(660, 0.4);
+        say(t('cpr.saySwap'));
+      }
+    }, 1000);
     return () => {
-      stop();
+      clearInterval(id);
       release();
     };
-  }, [on]);
+  }, [on, startedAt]);
+
+  const start = () => {
+    const at = Date.now();
+    setStartedAt(at);
+    lastSwap.current = at;
+    setCount(0);
+    setShocks(0);
+    setOn(true);
+    say(t('cpr.sayStart'));
+    logEvent('cpr-start');
+  };
+  const stop = () => {
+    setOn(false);
+    setPausedForBreaths(false);
+    stopSpeaking();
+    logEvent('cpr-stop');
+  };
+
+  const elapsed = startedAt ? now - startedAt : 0;
+  const nextSwap = SWAP_MS - ((now - lastSwap.current) % SWAP_MS);
 
   return (
     <Screen footer={<CallButton compact />}>
@@ -108,23 +172,73 @@ export function Cpr() {
 
       {on ? (
         <div class="metronome" aria-live="off">
-          <div class={pulse ? 'beat a' : 'beat b'}>
-            <span class="beat-count">{count}</span>
-            <span class="beat-of">/ 30</span>
+          <div class="cpr-clock">
+            <div>
+              <span class="stat-label">{t('cpr.elapsed')}</span>
+              <span class="stat-value">{duration(elapsed)}</span>
+            </div>
+            <div>
+              <span class="stat-label">{t('cpr.startedAt')}</span>
+              <span class="stat-value">{startedAt ? clock(new Date(startedAt).toISOString(), lang) : ''}</span>
+            </div>
+            <div>
+              <span class="stat-label">{t('cpr.swapIn')}</span>
+              <span class="stat-value">{duration(nextSwap)}</span>
+            </div>
+          </div>
+          <div class={pausedForBreaths ? 'beat breaths' : pulse ? 'beat a' : 'beat b'}>
+            {pausedForBreaths ? (
+              <span class="beat-breaths">{t('cpr.breathsNow')}</span>
+            ) : (
+              <>
+                <span class="beat-count">{count}</span>
+                {withBreaths && <span class="beat-of">/ 30</span>}
+              </>
+            )}
           </div>
           <p class="center muted">{t('cpr.pushOnBeat')}</p>
-          <button class="btn btn-outline" onClick={() => setOn(false)}>
-            {t('cpr.stop')}
-          </button>
+          <div class="row-2">
+            <button
+              class="btn btn-outline"
+              onClick={() => {
+                setShocks((n) => n + 1);
+                logEvent('aed-shock');
+              }}
+            >
+              {t('cpr.shock')} {shocks > 0 ? `(${shocks})` : ''}
+            </button>
+            <button class="btn btn-primary" onClick={stop}>
+              {t('cpr.stop')}
+            </button>
+          </div>
         </div>
       ) : (
-        <button class="btn btn-primary" onClick={() => setOn(true)}>
-          {t('cpr.start')}
-        </button>
+        <>
+          <div class="segmented two" role="radiogroup" aria-label={t('cpr.mode')}>
+            <button role="radio" aria-checked={!withBreaths} class={!withBreaths ? 'on' : undefined} onClick={() => setWithBreaths(false)}>
+              {t('cpr.modeHands')}
+            </button>
+            <button role="radio" aria-checked={withBreaths} class={withBreaths ? 'on' : undefined} onClick={() => setWithBreaths(true)}>
+              {t('cpr.modeBreaths')}
+            </button>
+          </div>
+          <label class="toggle-row">
+            <span class="toggle-label">{t('cpr.voice')}</span>
+            <input type="checkbox" checked={settings.voice} onChange={(e) => setSettings({ voice: e.currentTarget.checked })} />
+          </label>
+          <button class="btn btn-danger" onClick={start}>
+            {t('cpr.start')}
+          </button>
+        </>
       )}
+
+      <a class="btn btn-ghost" href={href('log')}>
+        {t('log.open')}
+      </a>
 
       <SectionTitle>{t('cpr.steps')}</SectionTitle>
       <Steps p={p} />
+      <p class="fineprint">{t('cpr.afterCare')}</p>
     </Screen>
   );
 }
@@ -201,68 +315,3 @@ export function Sos() {
   );
 }
 
-// ---- Family drill -----------------------------------------------------------------
-
-const DRILL_STEPS = ['drill.s1', 'drill.s2', 'drill.s3', 'drill.s4', 'drill.s5'] as const;
-
-export function Drill() {
-  const { t, lang, settings, setSettings } = useStore();
-  const [done, setDone] = useState<Record<number, boolean>>({});
-  const [seconds, setSeconds] = useState(0);
-  const [started, setStarted] = useState(false);
-  const allDone = DRILL_STEPS.every((_, i) => done[i]);
-
-  useEffect(() => {
-    if (!started || allDone) return;
-    const id = window.setInterval(() => setSeconds((s) => s + 1), 1000);
-    return () => clearInterval(id);
-  }, [started, allDone]);
-
-  useEffect(() => {
-    if (allDone && started) setSettings({ lastDrillAt: new Date().toISOString().slice(0, 10) });
-  }, [allDone]);
-
-  const mm = String(Math.floor(seconds / 60)).padStart(2, '0');
-  const ss = String(seconds % 60).padStart(2, '0');
-
-  return (
-    <Screen tab="plan">
-      <BackLink />
-      <h1 class="title-l">{t('drill.title')}</h1>
-      <p class="lead">{t('drill.sub')}</p>
-      {settings.lastDrillAt && (
-        <p class="muted">{t('drill.last', { date: new Date(settings.lastDrillAt).toLocaleDateString(lang) })}</p>
-      )}
-      {!started ? (
-        <button class="btn btn-primary" onClick={() => setStarted(true)}>
-          {t('drill.start')}
-        </button>
-      ) : (
-        <div class="timer" aria-live="off">
-          {mm}:{ss}
-        </div>
-      )}
-      <div class="list">
-        {DRILL_STEPS.map((k, i) => (
-          <label key={k} class={done[i] ? 'list-row check-row done' : 'list-row check-row'}>
-            <input
-              type="checkbox"
-              disabled={!started}
-              checked={!!done[i]}
-              onChange={(e) => setDone({ ...done, [i]: e.currentTarget.checked })}
-            />
-            <span class="list-title">{t(k)}</span>
-          </label>
-        ))}
-      </div>
-      {allDone && started && (
-        <p class="banner banner-ok" role="status">
-          {t('drill.done', { time: `${mm}:${ss}` })}
-        </p>
-      )}
-      <a class="btn btn-ghost" href={href('plan')}>
-        {t('drill.openPlan')}
-      </a>
-    </Screen>
-  );
-}

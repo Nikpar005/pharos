@@ -6,7 +6,7 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
-import { Guide, Country, Kit, Procedure, Region, FirstAid, LOCALES } from '../schemas/content.mjs';
+import { Guide, Country, Kit, Procedure, Region, FirstAid, Extras, LOCALES } from '../schemas/content.mjs';
 import { z } from 'zod';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -52,6 +52,7 @@ const countries = loadDir('countries', Country);
 const kit = load(join(contentDir, 'kit.yaml'), Kit);
 const procedures = loadDir('procedures', Procedure);
 const firstAid = load(join(contentDir, 'firstaid.yaml'), FirstAid);
+const extras = load(join(contentDir, 'extras.yaml'), Extras);
 const regions = load(join(contentDir, 'regions.yaml'), z.object({ regions: z.array(Region).min(1) }))?.regions ?? [];
 
 const topicIds = new Set();
@@ -86,6 +87,7 @@ if (!checkOnly) {
   writeFileSync(target, JSON.stringify(out));
   // First aid is a separate file so the app loads it only when that screen opens.
   writeFileSync(join(root, 'src', 'generated', 'firstaid.json'), JSON.stringify(firstAid));
+  writeFileSync(join(root, 'src', 'generated', 'extras.json'), JSON.stringify(extras));
 }
 console.log(
   `content ok: ${guides.length} guides, ${countries.length} countries, ${itemIds.size} kit items, ` +

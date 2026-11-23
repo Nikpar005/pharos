@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
 // @ts-expect-error plain JS module shared with the build script
-import { Guide, Country, Kit, Procedure, Region, FirstAid } from '../schemas/content.mjs';
+import { Guide, Country, Kit, Procedure, Region, FirstAid, Extras } from '../schemas/content.mjs';
 import el from '../src/i18n/el.json';
 import en from '../src/i18n/en.json';
 
@@ -45,6 +45,15 @@ describe('content files', () => {
     expect(r.success, JSON.stringify(r.error?.issues)).toBe(true);
     expect(data.sources.some((s: { name: string }) => s.name.includes('ΕΚΑΒ'))).toBe(true);
     for (const t of data.topics) expect(Object.keys(t.locales).sort()).toEqual(['el', 'en']);
+  });
+  it('extras.yaml (phone setup, evacuation, phrases) is valid', () => {
+    const r = Extras.safeParse(yaml('extras.yaml'));
+    expect(r.success, JSON.stringify(r.error?.issues)).toBe(true);
+  });
+  it('every online link is https', () => {
+    for (const f of readdirSync(join(dir, 'countries'))) {
+      for (const l of yaml(`countries/${f}`).links ?? []) expect(l.url.startsWith('https://')).toBe(true);
+    }
   });
   it('kit.yaml is valid', () => {
     const r = Kit.safeParse(yaml('kit.yaml'));

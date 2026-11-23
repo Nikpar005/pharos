@@ -75,6 +75,59 @@ export function startWhistle(): () => void {
   };
 }
 
+/** Loud rising-and-falling siren to get the attention of people nearby. */
+export function startSiren(): () => void {
+  const ac = audio();
+  let stopped = false;
+  let timer = 0;
+  const vib = () => {
+    try {
+      navigator.vibrate?.([600, 200, 600, 200]);
+    } catch {
+      /* ignore */
+    }
+  };
+  const cycle = () => {
+    if (stopped) return;
+    if (ac) {
+      const t = ac.currentTime + 0.02;
+      const osc = ac.createOscillator();
+      const gain = ac.createGain();
+      osc.type = 'square';
+      osc.frequency.setValueAtTime(650, t);
+      osc.frequency.linearRampToValueAtTime(1450, t + 0.5);
+      osc.frequency.linearRampToValueAtTime(650, t + 1.0);
+      gain.gain.setValueAtTime(0.9, t);
+      osc.connect(gain).connect(ac.destination);
+      osc.start(t);
+      osc.stop(t + 1.0);
+    }
+    vib();
+    timer = window.setTimeout(cycle, 1000);
+  };
+  cycle();
+  return () => {
+    stopped = true;
+    clearTimeout(timer);
+    try {
+      navigator.vibrate?.(0);
+    } catch {
+      /* ignore */
+    }
+  };
+}
+
+/** Short beep, for countdowns. */
+export function beep(freq = 880, seconds = 0.15): void {
+  const ac = audio();
+  if (ac) tone(ac, freq, ac.currentTime + 0.01, seconds, 0.8, 'square');
+  try {
+    navigator.vibrate?.(150);
+  } catch {
+    /* ignore */
+  }
+}
+
 /** Metronome clicks at `bpm`; calls onBeat on every click (for the counter). */
 export function startMetronome(bpm: number, onBeat: () => void): () => void {
   const ac = audio();

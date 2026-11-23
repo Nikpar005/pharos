@@ -2,7 +2,7 @@ import { createContext, type ComponentChildren } from 'preact';
 import { useContext, useMemo, useState } from 'preact/hooks';
 import { save, requestPersistence, type Saved, type Settings, type KitState } from './lib/storage';
 import type { Plan } from './lib/plan';
-import { translate, type Key, type Lang } from './i18n';
+import { loadLanguage, translate, type Key, type Lang } from './i18n';
 import { getCountry, type Country } from './content';
 
 interface Store extends Saved {
@@ -29,8 +29,13 @@ export function StoreProvider(props: { initial: Saved; children: ComponentChildr
       t: (key, vars) => translate(lang, key, { emergency: country.emergency, ...vars }),
       setSettings(patch) {
         const settings = { ...state.settings, ...patch };
-        setState((s) => ({ ...s, settings }));
-        save('settings', settings);
+        const apply = () => {
+          setState((s) => ({ ...s, settings }));
+          save('settings', settings);
+        };
+        // A new language's text must be loaded before the screen re-renders.
+        if (patch.lang && patch.lang !== state.settings.lang) loadLanguage(patch.lang).then(apply, apply);
+        else apply();
       },
       setPlan(plan) {
         setState((s) => ({ ...s, plan }));

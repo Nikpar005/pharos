@@ -29,6 +29,31 @@ numbers:
     locales:
       el: { label: Κέντρο Δηλητηριάσεων (24ωρο) }
       en: { label: Poison Centre (24 h) }
+# Online-only services, shown behind one "Online" button. Most are regional:
+# add your region's official links here.
+links:
+  - id: shelters
+    url: https://mysafetyplan.gov.gr
+    locales:
+      el: { label: Χώροι καταφυγής (mySafetyPlan, gov.gr) }
+      en: { label: Safe assembly areas (mySafetyPlan, gov.gr) }
+  - id: pharmacies
+    region: attica
+    url: https://fsa-efimeries.gr
+    locales:
+      el: { label: Εφημερεύοντα φαρμακεία Αττικής (Φαρμακευτικός Σύλλογος Αττικής) }
+      en: { label: Pharmacies on duty, Attica (Attica Pharmacists' Association) }
+  - id: hospitals
+    region: attica
+    url: https://www.vrisko.gr/efimeries-nosokomeion/athina/oles-oi-efimeries-nosokomeion/
+    locales:
+      el: { label: Εφημερεύοντα νοσοκομεία Αττικής (vrisko.gr, στοιχεία Υπουργείου Υγείας) }
+      en: { label: Hospitals on duty, Attica (vrisko.gr, Ministry of Health data) }
+  - id: fire-risk
+    url: https://civilprotection.gov.gr/xartis
+    locales:
+      el: { label: Χάρτης κινδύνου πυρκαγιάς για αύριο (Πολιτική Προστασία) }
+      en: { label: Tomorrow's fire risk map (Civil Protection) }
 locales:
   el:
     name: Ελλάδα

@@ -16,6 +16,14 @@ export interface Settings {
   devMode: boolean;
   /** ISO date of the last family drill. */
   lastDrillAt?: string;
+  /** Bigger text everywhere. */
+  largeText: boolean;
+  /** Spoken guidance in CPR and other tools. */
+  voice: boolean;
+  /** "Are you okay?" check after erratic tapping (opt-in). */
+  guardian: boolean;
+  /** The user went through "Set up your phone". */
+  phoneSetupDone: boolean;
 }
 
 export interface KitState {
@@ -32,7 +40,18 @@ export interface Saved {
 
 export function defaultSettings(): Settings {
   const lang = typeof navigator !== 'undefined' && navigator.language?.startsWith('el') ? 'el' : 'en';
-  return { onboarded: false, country: 'gr', lang, theme: 'auto', simpleMode: false, devMode: false };
+  return {
+    onboarded: false,
+    country: 'gr',
+    lang,
+    theme: 'auto',
+    simpleMode: false,
+    devMode: false,
+    largeText: false,
+    voice: true,
+    guardian: false,
+    phoneSetupDone: false
+  };
 }
 
 export async function loadAll(): Promise<Saved> {

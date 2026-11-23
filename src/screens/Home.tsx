@@ -6,6 +6,8 @@ import { LowBattery } from '../components/LowBattery';
 import { guides, pick } from '../content';
 import { href, navigate } from '../router';
 import { SimpleHome } from './SimpleHome';
+import { ReadyCard } from './Ready';
+import { Logo } from '../components/Logo';
 import type { Key } from '../i18n';
 
 const SIX_MONTHS_MS = 182 * 24 * 60 * 60 * 1000;
@@ -13,8 +15,10 @@ const SIX_MONTHS_MS = 182 * 24 * 60 * 60 * 1000;
 const tools: { path: string; icon: IconName; key: Key }[] = [
   { path: 'firstaid', icon: 'firstaid', key: 'firstaid.title' },
   { path: 'cpr', icon: 'heart', key: 'tools.cpr' },
+  { path: 'evacuate', icon: 'run', key: 'evac.short' },
   { path: 'trapped', icon: 'volume', key: 'tools.trapped' },
   { path: 'sos', icon: 'flash', key: 'tools.sos' },
+  { path: 'phrases', icon: 'globe', key: 'phrases.short' },
   { path: 'map', icon: 'map', key: 'tools.map' },
   { path: 'quakes', icon: 'earthquake', key: 'quakes.title' }
 ];
@@ -46,10 +50,14 @@ export function Home() {
       <header class="topbar">
         <div class="brand">
           <span class="logo" onClick={onLogoTap}>
-            <Icon name="lighthouse" />
+            <Logo size={44} />
           </span>
           <span>Pharos</span>
         </div>
+        <div class="topbar-actions">
+        <a class="icon-btn" href={href('settings')} aria-label={t('settings.title')}>
+          <Icon name="settings" size={22} />
+        </a>
         <button
           class="icon-btn"
           aria-label={t('settings.night')}
@@ -58,6 +66,7 @@ export function Home() {
         >
           <Icon name="moon" size={22} />
         </button>
+        </div>
       </header>
 
       <LowBattery />
@@ -87,6 +96,16 @@ export function Home() {
         </a>
       </div>
 
+      <a class="big-action big-nearby" href={href('nearby')}>
+        <span class="big-icon">
+          <Icon name="pin" size={26} />
+        </span>
+        <span class="big-text">
+          <span class="big-title small">{t('nearby.title')}</span>
+          <span class="big-sub">{t('nearby.homeSub')}</span>
+        </span>
+      </a>
+
       <h2 class="title-s">{t('home.what')}</h2>
       <div class="grid-2">
         {guides.map((g) => (
@@ -106,6 +125,15 @@ export function Home() {
           </a>
         ))}
       </div>
+
+      <ReadyCard />
+
+      {!settings.phoneSetupDone && (
+        <a class="banner" href={href('setup')}>
+          <strong>{t('setup.title')}</strong>
+          <span>{t('setup.cta')}</span>
+        </a>
+      )}
 
       {drillDue && (
         <a class="banner" href={href('drill')}>

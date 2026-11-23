@@ -51,13 +51,21 @@ jobs:
           {
             echo "## Offline map sizes"
             echo
-            echo "| Region | Max zoom | Size |"
-            echo "|---|---|---|"
+            echo "| Region | Max zoom | Map | Emergency places |"
+            echo "|---|---|---|---|"
           } >> "$GITHUB_STEP_SUMMARY"
           while IFS=$'\t' read -r id bbox maxzoom; do
             pmtiles extract "${{ steps.source.outputs.url }}" "out/$id.pmtiles" --bbox="$bbox" --maxzoom="$maxzoom"
+            # Emergency places for "Nearby" (Overpass wants south,west,north,east).
+            IFS=, read -r w s e n <<< "$bbox"
+            q="[out:json][timeout:300];(nwr[\"amenity\"~\"^(hospital|clinic|pharmacy|police|fire_station)$\"]($s,$w,$n,$e);nwr[\"emergency\"=\"assembly_point\"]($s,$w,$n,$e););out center tags;"
+            curl -sf --retry 3 --retry-delay 20 -H 'User-Agent: Pharos map build (github.com/${{ github.repository }})' \
+              --data-urlencode "data=$q" https://overpass-api.de/api/interpreter -o "out/$id.overpass.json"
+            node scripts/pois.mjs "out/$id.overpass.json" > "out/$id.pois.json"
+            rm "out/$id.overpass.json"
             size=$(awk "BEGIN { printf \"%.1f MB\", $(stat -c %s "out/$id.pmtiles") / 1000000 }")
-            echo "| $id | $maxzoom | $size |" >> "$GITHUB_STEP_SUMMARY"
+            psize=$(awk "BEGIN { printf \"%.0f KB\", $(stat -c %s "out/$id.pois.json") / 1000 }")
+            echo "| $id | $maxzoom | $size | $psize |" >> "$GITHUB_STEP_SUMMARY"
           done < regions.tsv
           echo >> "$GITHUB_STEP_SUMMARY"
           echo "Source: ${{ steps.source.outputs.url }} · © OpenStreetMap contributors (ODbL)" >> "$GITHUB_STEP_SUMMARY"
@@ -66,4 +74,4 @@ jobs:
       - name: Publish to the "maps" release
         run: |
           gh release view maps > /dev/null 2>&1 || gh release create maps --title "Offline maps" --notes "Map files for the app. © OpenStreetMap contributors (ODbL). Rebuilt monthly." --latest=false
-          gh release upload maps out/*.pmtiles --clobber
+          gh release upload maps out/*.pmtiles out/*.pois.json --clobber

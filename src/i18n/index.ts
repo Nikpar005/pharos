@@ -1,21 +1,27 @@
-// A 20-line i18n instead of a library: one flat JSON per language,
-// {placeholders}, English fallback. Translators only touch the JSON files.
-import el from './el.json';
-import en from './en.json';
+// A tiny i18n: one flat JSON per language, {placeholders}. Only the user's
+// language is downloaded at start-up; others load when chosen.
+import type en from './en.json';
 
 export type Lang = 'el' | 'en';
 export type Key = keyof typeof en;
 
-const dicts: Record<Lang, Record<string, string>> = { el, en };
+const dicts: Partial<Record<Lang, Record<string, string>>> = {};
+const loaders: Record<Lang, () => Promise<{ default: Record<string, string> }>> = {
+  el: () => import('./el.json'),
+  en: () => import('./en.json')
+};
 
 export const languages: { code: Lang; name: string }[] = [
   { code: 'el', name: 'Ελληνικά' },
   { code: 'en', name: 'English' }
 ];
 
-export function translate(lang: Lang, key: Key, vars?: Record<string, string | number>): string {
-  const text = dicts[lang][key] ?? dicts.en[key] ?? key;
-  return vars ? text.replace(/\{(\w+)\}/g, (m, k: string) => (k in vars ? String(vars[k]) : m)) : text;
+export async function loadLanguage(lang: Lang): Promise<void> {
+  if (!dicts[lang]) dicts[lang] = (await loaders[lang]()).default;
 }
 
-export const dictionaries = dicts;
+export function translate(lang: Lang, key: Key, vars?: Record<string, string | number>): string {
+  const d = dicts[lang] ?? dicts.en ?? dicts.el ?? {};
+  const text = d[key] ?? key;
+  return vars ? text.replace(/\{(\w+)\}/g, (m, k: string) => (k in vars ? String(vars[k]) : m)) : text;
+}

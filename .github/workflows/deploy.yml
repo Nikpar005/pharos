@@ -32,7 +32,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p dist/maps
-          gh release download maps --repo "${{ github.repository }}" --pattern '*.pmtiles' --dir dist/maps \
+          gh release download maps --repo "${{ github.repository }}" --pattern '*.pmtiles' --pattern '*.pois.json' --dir dist/maps \
             || echo "No maps yet: run the 'Build offline maps' workflow once."
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,5 +1,6 @@
 import { useStore } from '../store';
 import { Icon } from '../components/Icon';
+import { Logo } from '../components/Logo';
 import { languages, type Lang } from '../i18n';
 import { countries, pick } from '../content';
 import { useOfflineReady } from '../sw';
@@ -19,9 +20,7 @@ export function Welcome() {
   return (
     <div class="welcome">
       <div class="welcome-hero">
-        <div class="logo-xl">
-          <Icon name="lighthouse" size={64} stroke={1.6} />
-        </div>
+        <Logo size={128} animate title="Pharos" />
         <h1>Pharos</h1>
         <p class="pre">{t('welcome.tagline')}</p>
       </div>

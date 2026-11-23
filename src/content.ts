@@ -19,9 +19,17 @@ export type Guide = Review & {
   locales: Loc<{ title: string; now: string; before: string[]; during: string[]; after: string[] }>;
 };
 
+export interface OnlineLink {
+  id: string;
+  region?: string;
+  url: string;
+  locales: Loc<{ label: string }>;
+}
+
 export type Country = Review & {
   code: string;
   emergency: string;
+  links: OnlineLink[];
   numbers: { number: string; locales: Loc<{ label: string }> }[];
   sources: Source[];
   locales: Loc<{ name: string; authority: string }>;

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Monochrome lighthouse for the Quick Settings tile and shortcuts. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="64" android:viewportHeight="64">
+    <path android:fillColor="#FFFFFFFF" android:pathData="M32,18L3,8L3,28Z M32,18L61,8L61,28Z" android:fillAlpha="0.6"/>
+    <path android:fillColor="#FFFFFFFF" android:pathData="M26.5,27L37.5,27L41,54L23,54Z"/>
+    <path android:fillColor="#FFFFFFFF" android:pathData="M24,24h16v3h-16z M27.5,15h9v9h-9z M26,15.5L32,9L38,15.5Z M18,54h28v4h-28z"/>
+</vector>
