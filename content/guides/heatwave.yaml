@@ -1,0 +1,42 @@
+id: heatwave
+icon: heatwave
+order: 4
+status: draft
+sources:
+  - name: ΕΟΔΥ (Εθνικός Οργανισμός Δημόσιας Υγείας)
+    url: https://eody.gov.gr
+  - name: Γενική Γραμματεία Πολιτικής Προστασίας
+    url: https://civilprotection.gov.gr
+locales:
+  el:
+    title: Καύσωνας
+    now: Νερό, σκιά, δροσερός χώρος
+    before:
+      - Βρες έναν δροσερό χώρο κοντά σου (κλιματιζόμενη αίθουσα του δήμου, βιβλιοθήκη).
+      - Κανόνισε ποιος θα ελέγχει ηλικιωμένους και μοναχικούς γείτονες ή συγγενείς.
+      - Έχε σκίαστρα ή κουρτίνες για τα παράθυρα που βλέπουν ήλιο.
+    during:
+      - Πίνε νερό συχνά, πριν διψάσεις. Απόφυγε αλκοόλ και πολύ καφέ.
+      - Μείνε σε σκιά ή δροσερό χώρο τις πιο ζεστές ώρες της μέρας.
+      - Φόρα ελαφριά, ανοιχτόχρωμα ρούχα και καπέλο.
+      - Ποτέ μην αφήνεις παιδιά ή ζώα σε σταματημένο αυτοκίνητο.
+      - Αν κάποιος έχει σύγχυση, πολύ ζεστό δέρμα ή λιποθυμά, κάλεσε το 112.
+    after:
+      - Συνέχισε να πίνεις νερό και να ξεκουράζεσαι.
+      - Έλεγξε πώς είναι οι ηλικιωμένοι και οι ευάλωτοι γύρω σου.
+  en:
+    title: Heatwave
+    now: Water, shade, a cool place
+    before:
+      - Find a cool place near you (an air-conditioned public space, a library).
+      - Agree who will check on elderly or isolated neighbours and relatives.
+      - Have shades or curtains for windows that face the sun.
+    during:
+      - Drink water often, before you feel thirsty. Avoid alcohol and too much coffee.
+      - Stay in the shade or somewhere cool during the hottest hours.
+      - Wear light, light-coloured clothes and a hat.
+      - Never leave children or animals in a parked car.
+      - If someone is confused, has very hot skin or faints, call 112.
+    after:
+      - Keep drinking water and resting.
+      - Check on elderly and vulnerable people around you.

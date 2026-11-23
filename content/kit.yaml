@@ -1,0 +1,96 @@
+status: draft
+sources:
+  - name: Γενική Γραμματεία Πολιτικής Προστασίας
+    url: https://civilprotection.gov.gr
+  - name: European Commission, Preparedness Union Strategy
+    url: https://commission.europa.eu/topics/preparedness_en
+groups:
+  - id: water-food
+    locales:
+      el: { title: Νερό και τροφή }
+      en: { title: Water and food }
+    items:
+      - id: water
+        locales:
+          el: { label: "Νερό: 4 λίτρα ανά άτομο τη μέρα, για 3 μέρες" }
+          en: { label: "Water: 4 litres per person per day, for 3 days" }
+      - id: food
+        locales:
+          el: { label: Τρόφιμα που δεν χαλάνε, για 3 μέρες }
+          en: { label: Food that keeps, for 3 days }
+      - id: can-opener
+        locales:
+          el: { label: Ανοιχτήρι κονσέρβας }
+          en: { label: Can opener }
+  - id: light-comms
+    locales:
+      el: { title: Φως και επικοινωνία }
+      en: { title: Light and communication }
+    items:
+      - id: torch
+        locales:
+          el: { label: Φακός και εφεδρικές μπαταρίες }
+          en: { label: Torch and spare batteries }
+      - id: radio
+        locales:
+          el: { label: Ραδιόφωνο μπαταρίας }
+          en: { label: Battery-powered radio }
+      - id: powerbank
+        locales:
+          el: { label: Powerbank, φορτισμένο }
+          en: { label: Charged power bank }
+      - id: whistle
+        locales:
+          el: { label: Σφυρίχτρα }
+          en: { label: Whistle }
+  - id: health
+    locales:
+      el: { title: Υγεία }
+      en: { title: Health }
+    items:
+      - id: first-aid
+        locales:
+          el: { label: Φαρμακείο πρώτων βοηθειών }
+          en: { label: First aid kit }
+      - id: medicines
+        locales:
+          el: { label: Φάρμακα που παίρνεις, για 7 μέρες }
+          en: { label: Your regular medicines, for 7 days }
+      - id: masks
+        locales:
+          el: { label: Μάσκες προστασίας από σκόνη και καπνό }
+          en: { label: Masks for dust and smoke }
+  - id: documents-money
+    locales:
+      el: { title: Έγγραφα και χρήματα }
+      en: { title: Documents and money }
+    items:
+      - id: documents
+        locales:
+          el: { label: Αντίγραφα εγγράφων σε αδιάβροχη θήκη }
+          en: { label: Copies of documents in a waterproof pouch }
+      - id: cash
+        locales:
+          el: { label: Μετρητά σε μικρά χαρτονομίσματα }
+          en: { label: Cash in small notes }
+      - id: keys
+        locales:
+          el: { label: Εφεδρικά κλειδιά σπιτιού και αυτοκινήτου }
+          en: { label: Spare house and car keys }
+  - id: clothes-tools
+    locales:
+      el: { title: Ρούχα και εργαλεία }
+      en: { title: Clothes and tools }
+    items:
+      - id: clothes
+        locales:
+          el: { label: Ζεστά ρούχα και γερά παπούτσια }
+          en: { label: Warm clothes and sturdy shoes }
+      - id: blanket
+        locales:
+          el: { label: Κουβέρτα ή ισοθερμική κουβέρτα }
+          en: { label: Blanket or emergency foil blanket }
+      - id: multitool
+        locales:
+          el: { label: Σουγιάς ή πολυεργαλείο }
+          en: { label: Pocket knife or multitool }

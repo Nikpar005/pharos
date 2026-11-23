@@ -1,0 +1,28 @@
+id: trapped
+status: draft
+sources:
+  - name: Ready.gov (FEMA), Earthquakes
+    url: https://www.ready.gov/earthquakes
+  - name: ΟΑΣΠ (Οργανισμός Αντισεισμικού Σχεδιασμού και Προστασίας)
+    url: https://www.oasp.gr
+locales:
+  el:
+    title: Είμαι παγιδευμένος
+    intro: Μείνε όσο πιο ήρεμος μπορείς. Οι διασώστες ψάχνουν ακούγοντας.
+    steps:
+      - Κάλυψε μύτη και στόμα με ρούχο ή ύφασμα για να μην εισπνέεις σκόνη.
+      - Χτύπα σε σωλήνα ή τοίχο, ή άφησε το κινητό να σφυρίζει, για να σε εντοπίσουν.
+      - Φώναζε μόνο όταν δεν υπάρχει άλλος τρόπος, γιατί εισπνέεις σκόνη και κουράζεσαι.
+      - Μην ανάβεις σπίρτα ή αναπτήρα. Μπορεί να υπάρχει διαρροή αερίου.
+      - Αν υπάρχει σήμα, κάλεσε το 112 ή στείλε SMS με τη θέση σου.
+      - Κινήσου όσο λιγότερο γίνεται για να μη σηκώνεις σκόνη.
+  en:
+    title: I'm trapped
+    intro: Stay as calm as you can. Rescuers search by listening.
+    steps:
+      - Cover your nose and mouth with clothing or cloth so you don't breathe in dust.
+      - Tap on a pipe or wall, or let the phone whistle, so rescuers can find you.
+      - Shout only as a last resort, because you breathe in dust and tire yourself out.
+      - Do not light a match or lighter. There may be a gas leak.
+      - If there is signal, call 112 or send a text with your location.
+      - Move as little as possible so you don't stir up dust.

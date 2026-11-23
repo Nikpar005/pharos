@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and ideas
+    url: https://github.com/Nikpar005/pharos/discussions
+    about: Ask and discuss here, so issues stay focused on work to do.

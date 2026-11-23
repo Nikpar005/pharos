@@ -1,0 +1,46 @@
+id: earthquake
+icon: earthquake
+order: 1
+status: draft
+sources:
+  - name: ΟΑΣΠ (Οργανισμός Αντισεισμικού Σχεδιασμού και Προστασίας)
+    url: https://www.oasp.gr
+  - name: Γενική Γραμματεία Πολιτικής Προστασίας
+    url: https://civilprotection.gov.gr
+locales:
+  el:
+    title: Σεισμός
+    now: Πέσε · Καλύψου · Κρατήσου
+    before:
+      - Στερέωσε βαριά έπιπλα, ντουλάπες και ράφια στον τοίχο.
+      - Βρες τα ασφαλή σημεία σε κάθε δωμάτιο, κάτω από γερό τραπέζι ή γραφείο.
+      - Ετοίμασε το κιτ έκτακτης ανάγκης και έλεγξέ το κάθε 6 μήνες.
+      - Μάθε πού είναι ο χώρος καταφυγής της περιοχής σου.
+    during:
+      - Πέσε στο έδαφος, μπες κάτω από γερό τραπέζι και κρατήσου από το πόδι του.
+      - Μείνε μακριά από τζάμια, ντουλάπες και αντικείμενα που μπορεί να πέσουν.
+      - Μην τρέξεις έξω την ώρα της δόνησης και μη χρησιμοποιήσεις ασανσέρ.
+      - Αν είσαι έξω, απομακρύνσου από κτίρια, κολόνες και καλώδια.
+    after:
+      - Έλεγξε αν εσύ και όσοι είναι γύρω σου είστε καλά.
+      - Βγες με προσοχή από τις σκάλες, φορώντας παπούτσια.
+      - Αν μυρίζει αέριο ή υπάρχει ζημιά, κλείσε τις παροχές αερίου και ρεύματος.
+      - Πήγαινε στον χώρο καταφυγής και ακολούθησε τις οδηγίες των αρχών.
+  en:
+    title: Earthquake
+    now: Drop · Cover · Hold on
+    before:
+      - Fix heavy furniture, wardrobes and shelves to the wall.
+      - Find the safe spots in each room, under a sturdy table or desk.
+      - Prepare your emergency kit and check it every 6 months.
+      - Find out where the assembly area for your neighbourhood is.
+    during:
+      - Drop to the ground, take cover under a sturdy table and hold on to its leg.
+      - Stay away from windows, wardrobes and anything that could fall.
+      - Do not run outside while the ground is shaking and do not use lifts.
+      - If you are outdoors, move away from buildings, poles and power lines.
+    after:
+      - Check that you and the people around you are okay.
+      - Leave carefully by the stairs, wearing shoes.
+      - If you smell gas or see damage, turn off the gas and electricity.
+      - Go to the assembly area and follow instructions from the authorities.

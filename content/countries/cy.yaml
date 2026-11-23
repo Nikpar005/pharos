@@ -1,0 +1,20 @@
+code: cy
+emergency: "112"
+status: draft
+sources:
+  - name: Πολιτική Άμυνα Κύπρου
+    url: https://www.moi.gov.cy/moi/cd/cd.nsf
+  - name: European Commission, 112
+    url: https://digital-strategy.ec.europa.eu/en/policies/112
+numbers:
+  - number: "199"
+    locales:
+      el: { label: Έκτακτη ανάγκη (εναλλακτικός) }
+      en: { label: Emergency (alternative) }
+locales:
+  el:
+    name: Κύπρος
+    authority: Πολιτική Άμυνα Κύπρου
+  en:
+    name: Cyprus
+    authority: Cyprus Civil Defence

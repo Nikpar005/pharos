@@ -1,0 +1,46 @@
+id: wildfire
+icon: wildfire
+order: 2
+status: draft
+sources:
+  - name: Γενική Γραμματεία Πολιτικής Προστασίας
+    url: https://civilprotection.gov.gr
+  - name: Πυροσβεστικό Σώμα Ελλάδας
+    url: https://www.fireservice.gr
+locales:
+  el:
+    title: Πυρκαγιά
+    now: Αν σου πουν να φύγεις, φύγε αμέσως
+    before:
+      - Καθάρισε ξερά χόρτα, κλαδιά και εύφλεκτα υλικά γύρω από το σπίτι.
+      - Έχε λάστιχο νερού που φτάνει σε όλες τις πλευρές του σπιτιού.
+      - Σχεδίασε δύο διαφορετικούς δρόμους διαφυγής από την περιοχή σου.
+      - Κράτα το ρεζερβουάρ του αυτοκινήτου τουλάχιστον μισό το καλοκαίρι.
+    during:
+      - Ακολούθησε αμέσως κάθε εντολή εκκένωσης από το 112 ή τις αρχές.
+      - Κλείσε πόρτες και παράθυρα, και βάλε βρεγμένες πετσέτες στις χαραμάδες.
+      - Φόρα μακριά βαμβακερά ρούχα, γερά παπούτσια και κάλυψε μύτη και στόμα.
+      - Μην οδηγήσεις μέσα από καπνό ή φωτιά. Αν παγιδευτείς, σταμάτα σε ανοιχτό σημείο μακριά από δέντρα, κλείσε τα παράθυρα και σκύψε κάτω από κουβέρτα.
+    after:
+      - Γύρνα σπίτι μόνο όταν το επιτρέψουν οι αρχές.
+      - Πρόσεχε για εστίες που σιγοκαίνε και αναζωπυρώσεις.
+      - Φόρα μάσκα και γάντια όταν καθαρίζεις στάχτη.
+      - Μην πίνεις νερό από δίκτυο που ίσως επηρεάστηκε μέχρι να ενημερωθείς.
+  en:
+    title: Wildfire
+    now: If you are told to leave, leave now
+    before:
+      - Clear dry grass, branches and anything flammable from around your home.
+      - Keep a garden hose that reaches every side of the house.
+      - Plan two different escape routes out of your area.
+      - In summer, keep your car's fuel tank at least half full.
+    during:
+      - Follow any evacuation order from 112 or the authorities immediately.
+      - Close doors and windows and put wet towels in the gaps.
+      - Wear long cotton clothes and sturdy shoes, and cover your nose and mouth.
+      - Do not drive through smoke or fire. If trapped, stop in an open area away from trees, close the windows and get down under a blanket.
+    after:
+      - Go home only when the authorities say it is safe.
+      - Watch for smouldering spots and flare-ups.
+      - Wear a mask and gloves when cleaning up ash.
+      - Do not drink tap water that may be affected until you have been told it is safe.

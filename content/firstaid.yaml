@@ -1,0 +1,427 @@
+# First aid, written in our own words from the ΕΚΑΒ handbook
+# «Μαθαίνω Πρώτες Βοήθειες – Είμαι ασφαλής» (Υπουργείο Υγείας / ΕΚΑΒ).
+# Where the handbook and the newer ERC 2021 guidelines differ, we follow the
+# safer of the two and say so in a comment next to the step.
+# urgent: true → the topic page starts with a "Call 166 / 112" button.
+status: draft
+sources:
+  - name: ΕΚΑΒ, «Μαθαίνω Πρώτες Βοήθειες – Είμαι ασφαλής» (Υπουργείο Υγείας)
+    url: https://moh.gov.gr/articles/health/dieythynsh-prwtobathmias-frontidas-ygeias/draseis-kai-programmata-agwghs-ygeias/agwgh-ygeias/entypo-kai-optikoakoystiko-yliko/12791-bibliario-prwtwn-bohtheiwn?fdl=27980
+  - name: European Resuscitation Council, First Aid Guidelines 2021
+    url: https://www.cprguidelines.eu
+topics:
+  - id: recovery
+    urgent: true
+    locales:
+      el:
+        title: Θέση ασφαλείας
+        signs: Δεν αντιδρά καλά, αλλά αναπνέει κανονικά.
+        steps:
+          - Γονάτισε δίπλα του και βγάλε γυαλιά, κλειδιά, κινητό από πάνω του.
+          - Ανάσκελα, πόδια ίσια. Το κοντινό σου χέρι του σε ορθή γωνία από το σώμα.
+          - Το άλλο του χέρι πάνω στο στήθος, με την παλάμη στο μάγουλο προς το μέρος σου.
+          - Λύγισε το μακρινό του γόνατο ώστε το πέλμα να πατάει στο έδαφος.
+          - Τράβα το γόνατο και γύρισέ τον στο πλάι, προς το μέρος σου.
+          - Γείρε ελαφρά το κεφάλι πίσω για να μένει ανοιχτός ο αεραγωγός.
+          - Κάλεσε 166 ή 112 και έλεγχε συχνά ότι αναπνέει κανονικά.
+      en:
+        title: Recovery position
+        signs: Not responding properly, but breathing normally.
+        steps:
+          - Kneel beside them and remove glasses, keys and phone.
+          - On their back, legs straight. Their near arm at a right angle to the body.
+          - Their other arm across the chest, back of the hand against the cheek nearest you.
+          - Bend their far knee so the foot is flat on the ground.
+          - Pull the knee to roll them onto their side, towards you.
+          - Tilt the head back slightly to keep the airway open.
+          - Call 112 and check often that they are breathing normally.
+
+  - id: choking
+    urgent: false
+    locales:
+      el:
+        title: Πνιγμονή από φαγητό ή αντικείμενο
+        signs: Πιάνει τον λαιμό του. Βήχει έντονα ή δεν μπορεί να μιλήσει, να βήξει, να αναπνεύσει.
+        steps:
+          - Αν βήχει, ενθάρρυνέ τον να βήχει δυνατά.
+          - Αν δεν βγαίνει, σκύψ' τον μπροστά και δώσε 5 δυνατά χτυπήματα ανάμεσα στις ωμοπλάτες.
+          - Αν συνεχίζει, 5 κοιλιακές ώσεις κάτω από το στέρνο, με γροθιά, προς τα μέσα και πάνω.
+          - Σε έγκυο, οι ώσεις γίνονται στο κέντρο του στήθους, όχι στην κοιλιά.
+          - Εναλλάσσε 5 χτυπήματα και 5 ώσεις. Κάλεσε 166 ή 112.
+          - Αν χάσει τις αισθήσεις του, ξεκίνα ΚΑΡΠΑ.
+          - Βρέφος (κάτω του 1 έτους) — 5 χτυπήματα στην πλάτη πάνω στον πήχη σου και 5 πιέσεις στο στήθος με 2 δάχτυλα. Όχι κοιλιακές ώσεις.
+      en:
+        title: Choking
+        signs: Clutching the throat. Coughing hard, or unable to speak, cough or breathe.
+        steps:
+          - If they can cough, encourage them to keep coughing hard.
+          - If it doesn't clear, lean them forward and give 5 firm blows between the shoulder blades.
+          - If still blocked, give 5 abdominal thrusts below the breastbone, fist pulled in and up.
+          - For a pregnant woman, push on the centre of the chest, not the belly.
+          - Alternate 5 blows and 5 thrusts. Call 112.
+          - If they become unresponsive, start CPR.
+          - Baby (under 1) — 5 back blows along your forearm, then 5 chest pushes with 2 fingers. No abdominal thrusts.
+
+  - id: bleeding
+    urgent: true
+    locales:
+      el:
+        title: Μεγάλη αιμορραγία
+        signs: Αίμα που τρέχει ή πετάγεται από πληγή.
+        steps:
+          - Φόρα γάντια αν έχεις. Πίεσε δυνατά πάνω στην πληγή με γάζα ή καθαρό πανί.
+          - Αν μουσκέψει, μην το βγάζεις. Βάλε κι άλλο από πάνω και δέσε σφιχτά με επίδεσμο.
+          - Αν δεν σταματά σε χέρι ή πόδι, δέσε σφιχτά ένα φαρδύ πανί πιο ψηλά από την πληγή (ίσχαιμος περίδεση).
+          - Πέρνα ένα ξύλο ή στυλό στον κόμπο και στρίψε μέχρι να σταματήσει. Πονάει, αυτό είναι σωστό.
+          - Μην αφαιρείς ποτέ ό,τι έβαλες για να σταματήσει η αιμορραγία.
+          - Σκέπασε τον τραυματία για να μην κρυώσει και κάλεσε 166 ή 112.
+      en:
+        title: Severe bleeding
+        signs: Blood flowing or spurting from a wound.
+        steps:
+          - Wear gloves if you have them. Press hard on the wound with gauze or a clean cloth.
+          - If it soaks through, don't remove it. Add more on top and bandage firmly.
+          - If an arm or leg keeps bleeding, tie a wide cloth tightly above the wound (tourniquet).
+          - Put a stick or pen through the knot and twist until the bleeding stops. It will hurt; that is expected.
+          - Never remove anything you applied to stop the bleeding.
+          - Keep the person warm and call 112.
+
+  - id: burns
+    urgent: false
+    locales:
+      el:
+        title: Έγκαυμα
+        signs: Κόκκινο, καυτό δέρμα. Φουσκάλες ή μαύρο δέρμα σημαίνει βαρύτερο έγκαυμα.
+        steps:
+          - Απομάκρυνε το άτομο από τη φωτιά, το ρεύμα ή τη χημική ουσία.
+          - Βγάλε δαχτυλίδια, ρολόι, ζώνη από την περιοχή πριν πρηστεί.
+          - Ρίχνε δροσερό τρεχούμενο νερό στο έγκαυμα για 10–15 λεπτά.
+          - Μην σπάς τις φουσκάλες. Κάλυψε χαλαρά με καθαρή γάζα.
+          - Μην ξεκολλάς ρούχα κολλημένα στο δέρμα.
+          - Κάθε έγκαυμα εκτός από πολύ μικρά επιφανειακά θέλει γιατρό.
+          - Βραχνή φωνή, καμένα φρύδια ή μαύρα πτύελα μετά από καπνό — κάλεσε αμέσως 166 ή 112.
+      en:
+        title: Burns
+        signs: Red, hot skin. Blisters or black skin mean a deeper burn.
+        steps:
+          - Move the person away from the fire, electricity or chemical.
+          - Remove rings, watches and belts near the burn before it swells.
+          - Cool the burn under cool running water for 10–15 minutes.
+          - Don't burst blisters. Cover loosely with clean gauze.
+          - Don't pull off clothing stuck to the skin.
+          - Every burn except a very small, superficial one needs a doctor.
+          - Hoarse voice, singed eyebrows or black spit after smoke — call 112 at once.
+
+  - id: fracture
+    urgent: false
+    locales:
+      el:
+        title: Κάταγμα, εξάρθρημα, διάστρεμμα
+        signs: Πόνος στην κίνηση, πρήξιμο, μελάνιασμα, παραμόρφωση.
+        steps:
+          - Ακινητοποίησε το μέλος στη θέση που βρίσκεται. Μην προσπαθείς να το ισιώσεις.
+          - Στήριξέ το με νάρθηκα, σανίδα ή σκληρό χαρτόνι.
+          - Κρύο επίθεμα τυλιγμένο σε πανί για 10–20 λεπτά.
+          - Χέρι σε κρεμαστό από τον λαιμό, πόδι ψηλά σε αναπαυτική θέση.
+          - Πήγαινε στο νοσοκομείο. Ένα εξάρθρημα το βάζει στη θέση του μόνο γιατρός.
+          - Αν υποψιάζεσαι χτύπημα στη σπονδυλική στήλη (πτώση, τροχαίο), μην τον μετακινείς. Κράτα το κεφάλι ακίνητο και κάλεσε 166 ή 112.
+      en:
+        title: Fracture, dislocation, sprain
+        signs: Pain on movement, swelling, bruising, deformity.
+        steps:
+          - Keep the limb still in the position you found it. Don't try to straighten it.
+          - Support it with a splint, a board or stiff cardboard.
+          - Cold pack wrapped in cloth for 10–20 minutes.
+          - Arm in a sling; leg raised and comfortable.
+          - Go to hospital. Only a doctor should put a dislocated joint back.
+          - If you suspect a spine injury (a fall, a car crash), don't move them. Keep the head still and call 112.
+
+  - id: heatstroke
+    urgent: true
+    locales:
+      el:
+        title: Θερμοπληξία
+        signs: Κόκκινο, ζεστό, στεγνό δέρμα. Γρήγορη αναπνοή, σύγχυση, σπασμοί ή λιποθυμία.
+        steps:
+          - Κάλεσε 166 ή 112.
+          - Μετέφερέ τον σε σκιά ή δροσερό χώρο.
+          - Βρέξ' τον με δροσερό νερό ή βάλ' τον σε μπανιέρα με δροσερό νερό.
+          - Κρύες κομπρέσες σε λαιμό, μασχάλες, βουβωνική χώρα. Ανεμιστήρας αν υπάρχει.
+          - Αν έχει τις αισθήσεις του, δώσ' του νερό. Όχι αλκοόλ.
+          - Αν δεν αναπνέει κανονικά, ξεκίνα ΚΑΡΠΑ.
+      en:
+        title: Heatstroke
+        signs: Red, hot, dry skin. Fast breathing, confusion, seizures or collapse.
+        steps:
+          - Call 112.
+          - Move them into shade or somewhere cool.
+          - Soak them with cool water, or put them in a bath of cool water.
+          - Cold packs on the neck, armpits and groin. Use a fan if there is one.
+          - If they are conscious, give them water. No alcohol.
+          - If they are not breathing normally, start CPR.
+
+  - id: hypothermia
+    urgent: true
+    locales:
+      el:
+        title: Υποθερμία
+        signs: Ρίγος, αδυναμία, κρύο δέρμα, αργή ρηχή αναπνοή, μετά από κρύο ή κρύο νερό.
+        steps:
+          - Κάλεσε 166 ή 112.
+          - Μετέφερέ τον σε ζεστό χώρο και βγάλε τα βρεγμένα ρούχα.
+          - Σκέπασέ τον, και το κεφάλι.
+          - Ζεστές κομπρέσες σε λαιμό, μασχάλες, βουβωνική χώρα.
+          - Αν δεν αναπνέει κανονικά, ξεκίνα ΚΑΡΠΑ.
+      en:
+        title: Hypothermia
+        signs: Shivering, weakness, cold skin, slow shallow breathing after cold or cold water.
+        steps:
+          - Call 112.
+          - Move them somewhere warm and remove wet clothes.
+          - Cover them up, including the head.
+          - Warm packs on the neck, armpits and groin.
+          - If they are not breathing normally, start CPR.
+
+  - id: carbon-monoxide
+    urgent: true
+    locales:
+      el:
+        title: Μονοξείδιο του άνθρακα
+        signs: Πονοκέφαλος, ζάλη, ναυτία, σύγχυση σε κλειστό χώρο με μαγκάλι, σόμπα, γεννήτρια.
+        steps:
+          - Το αέριο δεν φαίνεται και δεν μυρίζει. Αν υποψιάζεσαι, βγες έξω.
+          - Κάλυψε μύτη και στόμα πριν μπεις και άνοιξε αμέσως πόρτες και παράθυρα.
+          - Σβήσε την πηγή μόνο αν είναι ασφαλές.
+          - Βγάλε τον άνθρωπο στον καθαρό αέρα και κάλεσε 166 ή 112.
+          - Αν δεν αναπνέει κανονικά, ξεκίνα ΚΑΡΠΑ.
+          - Ποτέ μαγκάλι, ψησταριά ή γεννήτρια σε κλειστό χώρο.
+      en:
+        title: Carbon monoxide
+        signs: Headache, dizziness, nausea, confusion indoors near a brazier, stove or generator.
+        steps:
+          - The gas has no colour or smell. If you suspect it, get outside.
+          - Cover your nose and mouth before going in and open doors and windows at once.
+          - Turn off the source only if it is safe.
+          - Get the person into fresh air and call 112.
+          - If they are not breathing normally, start CPR.
+          - Never use a brazier, barbecue or generator indoors.
+
+  - id: electric-shock
+    urgent: true
+    locales:
+      el:
+        title: Ηλεκτροπληξία, κεραυνός
+        signs: Επαφή με ρεύμα ή κεραυνό. Εγκαύματα, λιποθυμία, δυσκολία στην αναπνοή.
+        steps:
+          - ΜΗΝ τον αγγίξεις όσο είναι στο ρεύμα. Πρώτα η δική σου ασφάλεια.
+          - Κλείσε τον γενικό διακόπτη.
+          - Αν δεν γίνεται, απομάκρυνε το καλώδιο με στεγνό ξύλο ή πλαστικό.
+          - Σε καλώδια υψηλής τάσης μείνε πολλά μέτρα μακριά και κάλεσε 112.
+          - Κάλεσε 166 ή 112. Αν δεν αναπνέει κανονικά, ξεκίνα ΚΑΡΠΑ.
+          - Θέλει γιατρό ακόμα κι αν φαίνεται καλά.
+      en:
+        title: Electric shock, lightning
+        signs: Contact with electricity or lightning. Burns, collapse, trouble breathing.
+        steps:
+          - DON'T touch them while they are in contact with the current. Your safety first.
+          - Switch off the mains.
+          - If you can't, push the wire away with dry wood or plastic.
+          - With high-voltage lines, stay many metres away and call 112.
+          - Call 112. If they are not breathing normally, start CPR.
+          - They need a doctor even if they seem fine.
+
+  - id: chest-pain
+    urgent: true
+    locales:
+      el:
+        title: Πόνος στο στήθος
+        signs: Ξαφνικός πόνος ή βάρος στο στήθος για πάνω από 5 λεπτά, μπορεί να απλώνει σε πλάτη, λαιμό, χέρια. Ιδρώτας, ναυτία, δύσπνοια.
+        steps:
+          - Κάλεσε αμέσως 166 ή 112.
+          - Να μείνει ξαπλωμένος ή καθιστός και ήρεμος.
+          - Αν δεν είναι αλλεργικός και δεν του το έχει απαγορεύσει γιατρός, να μασήσει μία ασπιρίνη.
+          - Αν έχει υπογλώσσιο φάρμακο από τον γιατρό του, να το πάρει.
+          - Αν χάσει τις αισθήσεις του και δεν αναπνέει κανονικά, ξεκίνα ΚΑΡΠΑ.
+      en:
+        title: Chest pain
+        signs: Sudden pain or pressure in the chest for over 5 minutes, maybe spreading to the back, neck or arms. Sweating, nausea, breathlessness.
+        steps:
+          - Call 112 at once.
+          - Keep them lying or sitting down and calm.
+          - If they are not allergic and no doctor has told them not to, they can chew one aspirin.
+          - If their doctor prescribed a tablet under the tongue, they should take it.
+          - If they collapse and aren't breathing normally, start CPR.
+
+  - id: stroke
+    urgent: true
+    locales:
+      el:
+        title: Εγκεφαλικό
+        signs: Το ένα μισό του προσώπου πέφτει, μπερδεμένη ομιλία, δεν μπορεί να σηκώσει το ένα χέρι, θολή όραση, ζάλη.
+        steps:
+          - Κάλεσε αμέσως 166 ή 112. Κάθε λεπτό μετράει.
+          - Σημείωσε την ώρα που άρχισαν τα συμπτώματα.
+          - Μην του δώσεις να φάει ή να πιει.
+          - Αν χάσει τις αισθήσεις του αλλά αναπνέει, βάλ' τον σε θέση ασφαλείας.
+      en:
+        title: Stroke
+        signs: One side of the face droops, slurred speech, can't lift one arm, blurred vision, dizziness.
+        steps:
+          - Call 112 at once. Every minute counts.
+          - Note the time the symptoms started.
+          - Don't give them anything to eat or drink.
+          - If they lose consciousness but are breathing, put them in the recovery position.
+
+  - id: fainting
+    urgent: false
+    locales:
+      el:
+        title: Λιποθυμία
+        signs: Σύντομη απώλεια αισθήσεων, χλωμό κρύο δέρμα. Συνήθως συνέρχεται σε 1–5 λεπτά.
+        steps:
+          - Αν νιώθεις ότι θα λιποθυμήσεις, ξάπλωσε με τα πόδια ψηλά.
+          - Έλεγξε ότι αναπνέει κανονικά.
+          - Αν δεν συνέρχεται αλλά αναπνέει, βάλ' τον σε θέση ασφαλείας και κάλεσε 166 ή 112.
+          - Αν δεν αναπνέει κανονικά, ξεκίνα ΚΑΡΠΑ.
+          - Ενημέρωσε γιατρό ακόμα κι αν συνήλθε.
+      en:
+        title: Fainting
+        signs: Short loss of consciousness, pale cold skin. Usually recovers within 1–5 minutes.
+        steps:
+          - If you feel faint, lie down with your legs raised.
+          - Check they are breathing normally.
+          - If they don't come round but are breathing, use the recovery position and call 112.
+          - If they are not breathing normally, start CPR.
+          - Tell a doctor even if they recovered.
+
+  - id: seizure
+    urgent: false
+    locales:
+      el:
+        title: Σπασμοί, επιληπτική κρίση
+        signs: Ξαφνικές ακούσιες κινήσεις, συχνά με απώλεια αισθήσεων.
+        steps:
+          - Ξάπλωσέ τον μαλακά στο πάτωμα και βάλε κάτι μαλακό κάτω από το κεφάλι.
+          - Απομάκρυνε σκληρά και αιχμηρά αντικείμενα. Λύσε γραβάτα και ζώνη.
+          - ΜΗΝ τον κρατάς ακίνητο και ΜΗΝ βάζεις τίποτα στο στόμα του.
+          - Μην του δώσεις να πιει.
+          - Όταν σταματήσουν οι σπασμοί, αν δεν συνέρχεται, θέση ασφαλείας και 166 ή 112.
+      en:
+        title: Seizure
+        signs: Sudden uncontrolled movements, often with loss of consciousness.
+        steps:
+          - Lower them gently to the floor and put something soft under the head.
+          - Move hard and sharp objects away. Loosen tie and belt.
+          - DON'T hold them down and DON'T put anything in their mouth.
+          - Don't give them anything to drink.
+          - When it stops, if they don't come round, use the recovery position and call 112.
+
+  - id: anaphylaxis
+    urgent: true
+    locales:
+      el:
+        title: Σοβαρή αλλεργία (αναφυλαξία)
+        signs: Πρήξιμο σε χείλη, γλώσσα, λαιμό, δύσπνοια, βράγχος, κόκκινα σημάδια με φαγούρα, ζάλη. Εξελίσσεται γρήγορα.
+        steps:
+          - Κάλεσε αμέσως 166 ή 112.
+          - Ρώτα αν έχει μαζί του ένεση αδρεναλίνης. Αν έχει, βοήθησέ τον να την κάνει στον μηρό, με οδηγίες από τον ίδιο ή το ΕΚΑΒ.
+          - Λύσε ό,τι τον σφίγγει.
+          - Αν χάσει τις αισθήσεις του, θέση ασφαλείας. Αν δεν αναπνέει κανονικά, ΚΑΡΠΑ.
+          - Από τσίμπημα μέλισσας, αφαίρεσε το κεντρί.
+      en:
+        title: Severe allergic reaction (anaphylaxis)
+        signs: Swollen lips, tongue or throat, breathlessness, hoarse voice, itchy red rash, dizziness. It gets worse fast.
+        steps:
+          - Call 112 at once.
+          - Ask if they carry an adrenaline auto-injector. If so, help them inject it into the thigh, guided by them or the operator.
+          - Loosen anything tight.
+          - If they lose consciousness, recovery position. If not breathing normally, CPR.
+          - After a bee sting, remove the sting.
+
+  - id: poisoning
+    urgent: true
+    locales:
+      el:
+        title: Δηλητηρίαση
+        signs: Κατάποση φαρμάκων, απορρυπαντικών, φυτοφαρμάκων ή εισπνοή τοξικών αερίων.
+        steps:
+          - Κάλεσε το Κέντρο Δηλητηριάσεων (210 7793777, 24 ώρες) ή το 166 και κάνε ό,τι σου πουν.
+          - Κράτα τη συσκευασία της ουσίας για να τους πεις τι ήταν.
+          - Μην προκαλείς εμετό χωρίς οδηγία, και ποτέ μετά από καυστικά, χλώριο, πετρελαιοειδή ή αν έχει χάσει τις αισθήσεις του.
+          - Στο δέρμα — βγάλε τα ρούχα και ξέπλενε με άφθονο νερό για 20 λεπτά, με γάντια.
+          - Στα μάτια — ξέπλενε με ανοιχτά βλέφαρα για 20 λεπτά, από τη μύτη προς τα έξω.
+          - Αν χάσει τις αισθήσεις του, θέση ασφαλείας. Αν δεν αναπνέει κανονικά, ΚΑΡΠΑ χωρίς εμφυσήσεις.
+      en:
+        title: Poisoning
+        signs: Swallowed medicines, detergents or pesticides, or breathed in toxic fumes.
+        steps:
+          - Call the Poison Centre (210 779 3777, 24 hours, Greece) or 112 and do what they say.
+          - Keep the packaging so you can tell them what it was.
+          - Don't make them vomit unless told to, and never after caustics, bleach or petrol products, or if unconscious.
+          - On the skin — remove clothing and rinse with plenty of water for 20 minutes, wearing gloves.
+          - In the eyes — rinse with the eyelids open for 20 minutes, from the nose outwards.
+          - If unconscious, recovery position. If not breathing normally, CPR without rescue breaths.
+
+  - id: hypoglycaemia
+    urgent: false
+    locales:
+      el:
+        title: Υπογλυκαιμία (πεσμένο ζάχαρο)
+        signs: Σε άτομο με διαβήτη — αδυναμία, πείνα, κρύος ιδρώτας, τρέμουλο, νευρικότητα, σύγχυση.
+        steps:
+          - Αν μπορεί να καταπιεί, δώσ' του χυμό πορτοκάλι ή νερό με 2–3 κουταλιές ζάχαρη ή μέλι.
+          - Αν έχει ένεση γλυκαγόνης, μπορεί να γίνει με τις οδηγίες της.
+          - Αν δεν έχει επαφή ή χάσει τις αισθήσεις του, μην του δίνεις τίποτα από το στόμα. Θέση ασφαλείας και 166 ή 112.
+      en:
+        title: Low blood sugar (hypoglycaemia)
+        signs: In someone with diabetes — weakness, hunger, cold sweat, shaking, irritability, confusion.
+        steps:
+          - If they can swallow, give orange juice or water with 2–3 spoons of sugar or honey.
+          - If they carry a glucagon injection, it can be given following its instructions.
+          - If they are not responsive or lose consciousness, give nothing by mouth. Recovery position and call 112.
+
+  - id: drowning
+    urgent: true
+    locales:
+      el:
+        title: Πνιγμός στο νερό
+        signs: Δεν αναπνέει ή αναπνέει με μεγάλη δυσκολία μετά από βύθιση στο νερό.
+        steps:
+          - Μην μπαίνεις στο νερό αν δεν μπορείς να το κάνεις με ασφάλεια. Φώναξε ναυαγοσώστη, ρίξε κάτι που επιπλέει.
+          - Βγάλ' τον έξω και κάλεσε 166 ή 112.
+          - Αν δεν αναπνέει κανονικά, δώσε 5 αρχικές εμφυσήσεις και μετά ΚΑΡΠΑ 30 πιέσεις και 2 εμφυσήσεις.
+          - Ο απινιδωτής μπαίνει μόνο σε στεγνό στήθος και στεγνό έδαφος.
+          - Σε ρεύμα που σε τραβάει στα βαθιά, κολύμπα παράλληλα με την ακτή και μετά προς την ακτή.
+      en:
+        title: Drowning
+        signs: Not breathing, or breathing with great difficulty, after being under water.
+        steps:
+          - Don't go into the water unless you can do it safely. Call a lifeguard, throw something that floats.
+          - Get them out and call 112.
+          - If not breathing normally, give 5 initial rescue breaths, then CPR — 30 compressions and 2 breaths.
+          - Use a defibrillator only on a dry chest, on dry ground.
+          - If a current pulls you out, swim parallel to the shore, then back in.
+
+  - id: snakebite
+    urgent: false
+    locales:
+      el:
+        title: Δάγκωμα φιδιού
+        signs: Πόνος, πρήξιμο, μελανιές στο σημείο. Αργότερα ζάλη, έμετος, αδυναμία.
+        steps:
+          - Να μείνει ήρεμος και όσο πιο ακίνητος γίνεται.
+          - Ακινητοποίησε το μέλος, κάτω από το ύψος της καρδιάς.
+          - Πλύνε την πληγή με νερό και σαπούνι.
+          - ΟΧΙ πάγο, ΟΧΙ ίσχαιμο περίδεση, ΟΧΙ καφέ ή αλκοόλ.
+          - Μην κυνηγήσεις το φίδι. Θυμήσου χρώμα και σχήμα.
+          - Πήγαινε αμέσως στο νοσοκομείο ή κάλεσε 166.
+      en:
+        title: Snake bite
+        signs: Pain, swelling, bruising at the bite. Later dizziness, vomiting, weakness.
+        steps:
+          - Keep them calm and as still as possible.
+          - Keep the limb still, below heart level.
+          - Wash the wound with soap and water.
+          - NO ice, NO tourniquet, NO coffee or alcohol.
+          - Don't chase the snake. Remember its colour and shape.
+          - Go to hospital at once or call 112.

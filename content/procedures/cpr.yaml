@@ -1,0 +1,30 @@
+id: cpr
+status: draft
+sources:
+  - name: European Resuscitation Council, Guidelines 2021 (Basic Life Support)
+    url: https://www.cprguidelines.eu
+  - name: ΕΚΑΒ, «Μαθαίνω Πρώτες Βοήθειες – Είμαι ασφαλής» (Υπουργείο Υγείας)
+    url: https://moh.gov.gr/articles/health/dieythynsh-prwtobathmias-frontidas-ygeias/draseis-kai-programmata-agwghs-ygeias/agwgh-ygeias/entypo-kai-optikoakoystiko-yliko/12791-bibliario-prwtwn-bohtheiwn?fdl=27980
+locales:
+  el:
+    title: ΚΑΡΠΑ
+    intro: Για ενήλικα που δεν αντιδρά και δεν αναπνέει κανονικά.
+    steps:
+      - Βεβαιώσου ότι ο χώρος είναι ασφαλής. Ταρακούνησε απαλά τους ώμους και μίλα δυνατά.
+      - Άνοιξε τον αεραγωγό (κεφάλι πίσω, πηγούνι πάνω) και κοίτα, άκου, νιώσε για 10 δευτερόλεπτα. Αν δεν αναπνέει κανονικά, κάλεσε 166 ή 112 με ανοιχτή ακρόαση.
+      - Ζήτα από κάποιον να φέρει απινιδωτή. Όταν έρθει, άνοιξέ τον και κάνε ό,τι λέει.
+      - Βάλε τα χέρια στο κέντρο του στήθους και πίεζε δυνατά, 5–6 εκατοστά βάθος.
+      - Ακολούθησε τον ήχο. 100–120 πιέσεις το λεπτό, χωρίς διακοπή.
+      - Αν έχεις εκπαιδευτεί, κάνε 2 εμφυσήσεις κάθε 30 πιέσεις. Αλλιώς, μόνο πιέσεις.
+      - Συνέχισε μέχρι να έρθει βοήθεια, να σου πει ο απινιδωτής να σταματήσεις ή να αναπνεύσει κανονικά.
+  en:
+    title: CPR
+    intro: For an adult who is unresponsive and not breathing normally.
+    steps:
+      - Make sure the area is safe. Gently shake their shoulders and speak loudly.
+      - Open the airway (head back, chin up) and look, listen and feel for 10 seconds. If they aren't breathing normally, call 112 on speaker.
+      - Ask someone to bring a defibrillator (AED). When it arrives, switch it on and do what it says.
+      - Put your hands in the centre of the chest and push hard, 5–6 cm deep.
+      - Follow the sound. 100–120 compressions a minute, without stopping.
+      - If you are trained, give 2 rescue breaths after every 30 compressions. Otherwise, compressions only.
+      - Keep going until help arrives, the AED tells you to stop, or they breathe normally.

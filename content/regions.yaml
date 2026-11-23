@@ -1,0 +1,23 @@
+# Offline map regions. Map files are cut from OpenStreetMap (via Protomaps)
+# by .github/workflows/build-maps.yml and served from <site>/maps/<id>.pmtiles.
+# bbox = [west, south, east, north]. maxzoom 14 shows streets and their names;
+# 15 adds detail but roughly doubles the file size.
+regions:
+  - id: attica
+    bbox: [22.85, 37.55, 24.20, 38.40]
+    maxzoom: 14
+    locales:
+      el: { name: Αττική }
+      en: { name: Attica }
+  - id: evia
+    bbox: [22.75, 37.95, 24.65, 39.05]
+    maxzoom: 14
+    locales:
+      el: { name: Εύβοια }
+      en: { name: Evia }
+  - id: andros
+    bbox: [24.65, 37.75, 25.00, 38.00]
+    maxzoom: 14
+    locales:
+      el: { name: Άνδρος }
+      en: { name: Andros }

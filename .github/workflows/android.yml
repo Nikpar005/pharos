@@ -1,0 +1,70 @@
+name: Android app
+
+# Builds the Android app and reports its size. Run it from the Actions tab
+# ("Run workflow"), or it runs on pushes that touch the app.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['android/**', 'src/**', 'content/**', 'capacitor.config.ts', 'package-lock.json']
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: gradle
+      - uses: android-actions/setup-android@v3
+
+      - run: npm ci
+      - name: Build web app
+        run: npm run build
+      - name: Copy web app into Android project
+        run: npx cap sync android
+
+      - name: Build APKs and App Bundle
+        working-directory: android
+        run: ./gradlew --no-daemon assembleDebug assembleRelease bundleRelease
+
+      - name: Size report
+        run: |
+          mb() { awk "BEGIN { printf \"%.1f MB\", $(stat -c %s "$1") / 1000000 }"; }
+          DEBUG=android/app/build/outputs/apk/debug/app-debug.apk
+          RELEASE=android/app/build/outputs/apk/release/app-release-unsigned.apk
+          AAB=android/app/build/outputs/bundle/release/app-release.aab
+          {
+            echo "## Pharos Android size"
+            echo
+            echo "| File | Size | What it is |"
+            echo "|---|---|---|"
+            echo "| app-release-unsigned.apk | $(mb $RELEASE) | Close to what a phone installs (Play splits it further, usually smaller) |"
+            echo "| app-release.aab | $(mb $AAB) | What you upload to Google Play |"
+            echo "| app-debug.apk | $(mb $DEBUG) | For testing on your own phone (bigger, not optimised) |"
+            echo
+            echo "Web files inside the app: $(du -sh android/app/src/main/assets/public | cut -f1)"
+          } >> "$GITHUB_STEP_SUMMARY"
+          cat "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pharos-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pharos-release-unsigned
+          path: |
+            android/app/build/outputs/apk/release/app-release-unsigned.apk
+            android/app/build/outputs/bundle/release/app-release.aab
+          retention-days: 14

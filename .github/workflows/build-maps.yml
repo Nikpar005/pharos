@@ -1,0 +1,69 @@
+name: Build offline maps
+
+# Cuts each region in content/regions.yaml out of the latest OpenStreetMap
+# build from Protomaps, reports the sizes, and stores the files as assets of
+# the "maps" release. The Pages deploy then serves them at /maps/<id>.pmtiles.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 1 * *' # monthly refresh
+
+permissions:
+  contents: write
+
+jobs:
+  maps:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Install pmtiles CLI
+        run: |
+          gh release download --repo protomaps/go-pmtiles --pattern '*Linux_x86_64.tar.gz' --dir /tmp/pmtiles
+          tar -xzf /tmp/pmtiles/*.tar.gz -C /tmp/pmtiles
+          sudo mv /tmp/pmtiles/pmtiles /usr/local/bin/pmtiles
+          pmtiles version || true
+
+      - name: Find the latest Protomaps build
+        id: source
+        run: |
+          for i in $(seq 0 14); do
+            d=$(date -u -d "-$i day" +%Y%m%d)
+            if curl -sfI "https://build.protomaps.com/$d.pmtiles" > /dev/null; then
+              echo "url=https://build.protomaps.com/$d.pmtiles" >> "$GITHUB_OUTPUT"
+              echo "Using build $d"
+              exit 0
+            fi
+          done
+          echo "No Protomaps build found in the last 15 days" && exit 1
+
+      - name: Extract regions
+        run: |
+          mkdir -p out
+          node scripts/regions.mjs > regions.tsv
+          {
+            echo "## Offline map sizes"
+            echo
+            echo "| Region | Max zoom | Size |"
+            echo "|---|---|---|"
+          } >> "$GITHUB_STEP_SUMMARY"
+          while IFS=$'\t' read -r id bbox maxzoom; do
+            pmtiles extract "${{ steps.source.outputs.url }}" "out/$id.pmtiles" --bbox="$bbox" --maxzoom="$maxzoom"
+            size=$(awk "BEGIN { printf \"%.1f MB\", $(stat -c %s "out/$id.pmtiles") / 1000000 }")
+            echo "| $id | $maxzoom | $size |" >> "$GITHUB_STEP_SUMMARY"
+          done < regions.tsv
+          echo >> "$GITHUB_STEP_SUMMARY"
+          echo "Source: ${{ steps.source.outputs.url }} · © OpenStreetMap contributors (ODbL)" >> "$GITHUB_STEP_SUMMARY"
+          cat "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish to the "maps" release
+        run: |
+          gh release view maps > /dev/null 2>&1 || gh release create maps --title "Offline maps" --notes "Map files for the app. © OpenStreetMap contributors (ODbL). Rebuilt monthly." --latest=false
+          gh release upload maps out/*.pmtiles --clobber

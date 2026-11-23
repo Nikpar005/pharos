@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Pharos</string>
+    <string name="title_activity_main">Pharos</string>
+    <string name="package_name">me.nikpar.pharos</string>
+    <string name="custom_url_scheme">me.nikpar.pharos</string>
+</resources>

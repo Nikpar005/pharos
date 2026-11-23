@@ -1,0 +1,40 @@
+id: flood
+icon: flood
+order: 3
+status: draft
+sources:
+  - name: Γενική Γραμματεία Πολιτικής Προστασίας
+    url: https://civilprotection.gov.gr
+locales:
+  el:
+    title: Πλημμύρα
+    now: Ανέβα ψηλά. Μην μπαίνεις σε νερό που κινείται
+    before:
+      - Μάθε αν το σπίτι σου είναι σε περιοχή που πλημμυρίζει.
+      - Κράτα έγγραφα και πολύτιμα πράγματα ψηλά, όχι σε υπόγειο.
+      - Καθάρισε υδρορροές και φρεάτια γύρω από το σπίτι.
+    during:
+      - Ανέβα σε ψηλότερο όροφο ή σημείο. Μη μένεις σε υπόγειο ή ισόγειο.
+      - Μην περπατάς και μην οδηγείς μέσα σε νερό που κινείται. Ακόμα και λίγα εκατοστά μπορούν να σε ρίξουν ή να παρασύρουν αυτοκίνητο.
+      - Αν το νερό πλησιάζει τις πρίζες και μπορείς να το κάνεις με ασφάλεια, κλείσε τον γενικό διακόπτη ρεύματος.
+      - Μείνε μακριά από ρέματα, γέφυρες και πεσμένα καλώδια.
+    after:
+      - Μην αγγίζεις νερό πλημμύρας. Μπορεί να είναι μολυσμένο ή ηλεκτροφόρο.
+      - Μη χρησιμοποιείς ηλεκτρικές συσκευές που βράχηκαν πριν ελεγχθούν.
+      - Φωτογράφισε τις ζημιές πριν καθαρίσεις, για ασφάλεια και αποζημίωση.
+  en:
+    title: Flood
+    now: Get to higher ground. Stay out of moving water
+    before:
+      - Find out whether your home is in an area that floods.
+      - Keep documents and valuables up high, not in a basement.
+      - Clear gutters and drains around your home.
+    during:
+      - Move to a higher floor or higher ground. Do not stay in a basement or ground floor.
+      - Do not walk or drive through moving water. Even a few centimetres can knock you over or sweep a car away.
+      - If water is nearing the sockets and you can do it safely, switch off the mains.
+      - Stay away from streams, bridges and fallen power lines.
+    after:
+      - Avoid touching flood water. It may be contaminated or electrified.
+      - Do not use electrical appliances that got wet until they have been checked.
+      - Photograph the damage before cleaning, for insurance and compensation.

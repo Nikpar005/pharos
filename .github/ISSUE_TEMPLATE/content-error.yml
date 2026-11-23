@@ -1,0 +1,24 @@
+name: Wrong or outdated safety information
+description: Something in a guide, number or kit list is wrong. These are fixed first.
+title: "Content error: "
+labels: ["content", "priority"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where (file or screen)
+      placeholder: content/guides/flood.yaml, step 2 of "During"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong, and what should it say?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source for the correction (https link)
+    validations:
+      required: true

@@ -1,0 +1,30 @@
+name: Add my country
+description: Emergency numbers and official sources for a new country
+title: "Add country: "
+labels: ["content", "country", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! You can open a pull request directly (see CONTRIBUTING.md → "Add your country"),
+        or fill this in and a maintainer will turn it into a file.
+  - type: input
+    id: country
+    attributes:
+      label: Country
+    validations:
+      required: true
+  - type: textarea
+    id: numbers
+    attributes:
+      label: Emergency numbers
+      description: One per line, e.g. "112 – general emergency", "199 – fire service"
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Official sources (https links)
+      description: Government or civil protection pages that list these numbers. Required.
+    validations:
+      required: true

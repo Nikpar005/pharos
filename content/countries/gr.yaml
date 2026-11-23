@@ -1,0 +1,38 @@
+code: gr
+emergency: "112"
+status: draft
+sources:
+  - name: ΕΚΑΒ, «Μαθαίνω Πρώτες Βοήθειες – Είμαι ασφαλής» (166, Κέντρο Δηλητηριάσεων)
+    url: https://moh.gov.gr/articles/health/dieythynsh-prwtobathmias-frontidas-ygeias/draseis-kai-programmata-agwghs-ygeias/agwgh-ygeias/entypo-kai-optikoakoystiko-yliko/12791-bibliario-prwtwn-bohtheiwn?fdl=27980
+  - name: Γενική Γραμματεία Πολιτικής Προστασίας
+    url: https://civilprotection.gov.gr
+  - name: European Commission, 112
+    url: https://digital-strategy.ec.europa.eu/en/policies/112
+numbers:
+  - number: "100"
+    locales:
+      el: { label: Αστυνομία }
+      en: { label: Police }
+  - number: "166"
+    locales:
+      el: { label: ΕΚΑΒ (ασθενοφόρο) }
+      en: { label: Ambulance (EKAB) }
+  - number: "199"
+    locales:
+      el: { label: Πυροσβεστική }
+      en: { label: Fire service }
+  - number: "108"
+    locales:
+      el: { label: Λιμενικό }
+      en: { label: Coast guard }
+  - number: "2107793777"
+    locales:
+      el: { label: Κέντρο Δηλητηριάσεων (24ωρο) }
+      en: { label: Poison Centre (24 h) }
+locales:
+  el:
+    name: Ελλάδα
+    authority: Γενική Γραμματεία Πολιτικής Προστασίας
+  en:
+    name: Greece
+    authority: General Secretariat for Civil Protection
