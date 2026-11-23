@@ -87,12 +87,12 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           cat "$GITHUB_STEP_SUMMARY"
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: pharos-${{ env.VERSION }}-apk
           path: out/pharos.apk
           retention-days: 30
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: pharos-${{ env.VERSION }}-play-bundle
           path: out/pharos-*.aab
