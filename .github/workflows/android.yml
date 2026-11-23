@@ -3,11 +3,13 @@ name: Android app
 # Builds an installable APK.
 # - Every push to main (that touches the app) and "Run workflow": the APK is
 #   attached to the run as an artifact.
-# - Pushing a tag like v0.3.0: the APK is also published on the Releases
+# - Pushing a tag like v0.3.0, or publishing a release on github.com: the APK is also published on the Releases
 #   page, with a fixed download link:
 #   https://github.com/Nikpar005/pharos/releases/latest/download/pharos.apk
 on:
   workflow_dispatch:
+  release:
+    types: [published] # making a release on github.com also builds and attaches the APK
   push:
     branches: [main]
     tags: ['v*']
@@ -15,6 +17,11 @@ on:
 
 permissions:
   contents: read
+
+# A release made on github.com fires both "push tag" and "release": run them one at a time.
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
