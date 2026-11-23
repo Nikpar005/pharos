@@ -8,6 +8,8 @@ Pharos (Greek for *lighthouse*) is a free, open-source emergency app for earthqu
 ![License: MIT](https://img.shields.io/badge/code-MIT-blue)
 ![Content: CC BY-SA 4.0](https://img.shields.io/badge/content-CC%20BY--SA%204.0-green)
 
+**Use it:** [open the web app](https://nikpar005.github.io/pharos/) (works offline after the first visit) or [download the Android APK](https://github.com/Nikpar005/pharos/releases/latest/download/pharos.apk).
+
 <p>
   <img src="docs/screenshots/home.png" width="200" alt="Home screen with Call 112 and I'm okay buttons">
   <img src="docs/screenshots/guide.png" width="200" alt="Earthquake guide: Drop, Cover, Hold on">
@@ -91,7 +93,7 @@ Offline mode only works in a production build: `npm run build && npm run preview
 
 **Maps:** run the *Build offline maps* workflow once (Actions tab). It cuts each region in [`content/regions.yaml`](content/regions.yaml) from OpenStreetMap, publishes them to the `maps` release, and the Pages deploy serves them. To add a region, add its bounding box there.
 
-**Android:** see [docs/ANDROID.md](docs/ANDROID.md).
+**Android:** push a tag like `v0.3.1` and the *Android app* workflow puts `pharos.apk` on the Releases page. Details and signing: [docs/ANDROID.md](docs/ANDROID.md).
 
 Browser support: Chrome/Android 80+, Safari/iOS 14+. Some features depend on the platform: battery level (not on iPhone), live battery current and reliable torch (Android app only), contact picker (Android Chrome).
 

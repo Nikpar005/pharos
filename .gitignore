@@ -6,3 +6,8 @@ src/generated/
 .DS_Store
 .vscode/*
 !.vscode/extensions.json
+
+# Android signing keys: never commit
+*.jks
+*.keystore
+keystore.properties

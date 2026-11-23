@@ -1,5 +1,16 @@
 apply plugin: 'com.android.application'
 
+// Version comes from package.json, so there is one place to change it.
+// 0.3.0 -> versionCode 300, 1.2.3 -> 10203.
+def pkg = new groovy.json.JsonSlurper().parse(file('../../package.json'))
+def (vMajor, vMinor, vPatch) = pkg.version.tokenize('.').collect { it.replaceAll(/\D.*/, '').toInteger() }
+
+// Release signing key from CI secrets (see docs/ANDROID.md). Without it the
+// release APK is signed with the debug key: fine for testing, but each such
+// build can only be updated by reinstalling.
+def keystorePath = System.getenv('PHAROS_KEYSTORE')
+def hasReleaseKey = keystorePath && file(keystorePath).exists()
+
 android {
     namespace = "me.nikpar.pharos"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -7,8 +18,8 @@ android {
         applicationId "me.nikpar.pharos"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode vMajor * 10000 + vMinor * 100 + vPatch
+        versionName pkg.version
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -16,8 +27,19 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        if (hasReleaseKey) {
+            release {
+                storeFile file(keystorePath)
+                storePassword System.getenv('PHAROS_KEYSTORE_PASSWORD')
+                keyAlias System.getenv('PHAROS_KEY_ALIAS')
+                keyPassword System.getenv('PHAROS_KEY_PASSWORD')
+            }
+        }
+    }
     buildTypes {
         release {
+            signingConfig hasReleaseKey ? signingConfigs.release : signingConfigs.debug
             // Smaller download: R8 removes unused code and resources.
             minifyEnabled true
             shrinkResources true
